@@ -1,0 +1,10 @@
+
+/* Адаптация изображения Анны на малых экранах */
+@media (max-width: 768px) {
+  .hero-img img {
+    object-fit: cover;
+    object-position: 20% top;
+    width: 100%;
+    height: auto;
+  }
+}
