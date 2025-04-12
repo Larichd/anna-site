@@ -23,15 +23,7 @@
         <link href="assets/css/main.css" rel="stylesheet"/>
         <link href="assets/css/custom.css" rel="stylesheet"/>
         <style>html[data-theme="dark"] .form-control::placeholder { color: #cccccc !important;  /* Светло-серый цвет */ opacity: 1 !important;  /* Убираем прозрачность */ } /* На всякий случай добавим и для префиксов с !important */html[data-theme="dark"] .form-control::-webkit-input-placeholder { color: #cccccc !important; opacity: 1 !important; } html[data-theme="dark"] .form-control::-moz-placeholder { /* Firefox 19+ */ color: #cccccc !important; opacity: 1 !important; } html[data-theme="dark"] .form-control:-ms-input-placeholder { /* IE 10+ */ color: #cccccc !important; opacity: 1 !important; } html[data-theme="dark"] .form-control::-ms-input-placeholder { /* Edge */ color: #cccccc !important; opacity: 1 !important; }</style>
-        <script>
-            // Проверка предпочтений пользователя
-            if (localStorage.getItem('theme') === 'dark' ||
-                (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'))) {
-                document.documentElement.setAttribute('data-theme', 'dark'); /* [source: 13] */
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light'); /* [source: 14] */
-            }
-     </script>
+     
         <!-- Meta tags -->
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&amp;display=swap" rel="stylesheet"/>
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
@@ -44,15 +36,7 @@
         <meta content="website" property="og:type"/>
         <meta content="index, follow" name="robots"/>
         <!-- Темная тема -->
-        <script>
-            // Проверка предпочтений пользователя
-            if (localStorage.getItem('theme') === 'dark' || 
-                (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'))) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        </script>
+      
     </head>
     <body class="index-page">
         <!-- Прелоадер -->
