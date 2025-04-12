@@ -1,0 +1,3828 @@
+/* custom.css - Современные улучшенные стили для сайта */
+
+/* ===== Основные переменные темной и светлой темы ===== */
+:root {
+    /* Светлая тема (по умолчанию) */
+    --background-color: #ffffff;
+    --secondary-background: #f8f9fa;
+    --text-color: #333333;
+    --heading-color: #212529;
+    --muted-color: #6c757d;
+    --primary-color: #0078ff;
+    --primary-hover: #0069d9;
+    --surface-color: #ffffff;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --card-background: #ffffff;
+}
+
+[data-theme="dark"] {
+
+[data-theme="dark"] .form-control::placeholder {
+  color: #cccccc; /* Светло-серый цвет для плейсхолдера */
+  opacity: 1;    /* Убираем возможную прозрачность по умолчанию, чтобы цвет был виден */
+}
+
+/* Если хотите чисто белый плейсхолдер, используйте это правило вместо верхнего: */
+/*
+[data-theme="dark"] .form-control::placeholder {
+  color: #ffffff;  // Белый цвет
+  opacity: 0.8;   // Можно сделать его чуть прозрачнее, чем основной текст
+}
+*/
+
+/* Примечание: Современные браузеры хорошо поддерживают ::placeholder.
+   Если нужна поддержка очень старых браузеров, можно добавить префиксы
+   ::-webkit-input-placeholder, ::-moz-placeholder и т.д., но обычно это уже не требуется. */
+
+/* ПРАВИЛЬНО (внутри блока [data-theme="dark"]) */
+p {
+    color: var(--text-color) !important; /* !important добавляется к свойству color */
+}
+
+.text-muted {
+    color: var(--muted-color) !important; /* !important добавляется к свойству color */
+}
+
+    /* Темная тема */
+    --background-color: #121212;
+    --secondary-background: #1e1e1e;
+    --text-color: #ffffff;
+    --heading-color: #ffffff;
+    --muted-color: #cccccc;
+    --primary-color: #3d9cff;
+    --primary-hover: #5aacff;
+    --surface-color: #2d2d2d;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --card-background: #2d2d2d;
+}
+
+/* Применение цветовой схемы */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+}
+
+section {
+    background-color: var(--background-color);
+}
+
+.text-muted {
+    color: var(--muted-color) !important;
+}
+
+/* ===== Улучшенный прелоадер ===== */
+#preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    transition: all 0.5s ease;
+}
+
+.loader-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), #584dc3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: pulse 1.5s infinite;
+}
+
+.loader-logo:before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--background-color);
+}
+
+.loader-logo span {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--primary-color);
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 120, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(0, 120, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 120, 255, 0);
+    }
+}
+
+/* ===== Улучшенный хедер и навигация ===== */
+.header {
+    background-color: var(--background-color);
+    box-shadow: 0 2px 20px var(--shadow-color);
+    transition: all 0.3s ease;
+    padding: 15px 0;
+}
+
+.scrolled .header {
+    background-color: var(--background-color);
+    padding: 10px 0;
+    box-shadow: 0 5px 20px var(--shadow-color);
+}
+
+/* Логотип */
+.logo-text {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    transition: color 0.3s ease;
+}
+
+/* Переключатель темы */
+.theme-toggle-wrapper {
+    margin-right: 20px;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Улучшенное меню */
+.navmenu ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navmenu .nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--text-color);
+    position: relative;
+    padding: 10px 5px;
+    transition: color 0.3s ease;
+}
+
+.navmenu .nav-link:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.navmenu .nav-link:hover,
+.navmenu .nav-link.active {
+    color: var(--primary-color);
+}
+
+.navmenu .nav-link:hover:after,
+.navmenu .nav-link.active:after {
+    width: 100%;
+}
+
+/* Кнопка Telegram */
+.btn-telegram {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #0088cc;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-telegram:hover {
+    background-color: #0077b3;
+    transform: translateY(-2px);
+}
+
+.btn-telegram i {
+    font-size: 1.1rem;
+}
+
+/* Улучшенная мобильная навигация */
+.mobile-nav-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-active .mobile-nav-toggle {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+@media (max-width: 1199px) {
+    .navmenu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        width: 300px;
+        max-width: 80%;
+        background-color: var(--card-background);
+        box-shadow: -5px 0 15px var(--shadow-color);
+        padding: 80px 20px 30px;
+        transition: right 0.3s ease;
+        overflow-y: auto;
+        z-index: 999;
+    }
+    
+    .mobile-nav-active .navmenu {
+        right: 0;
+    }
+    
+    .navmenu ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .navmenu .nav-link {
+        padding: 15px 0;
+        display: block;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .navmenu .nav-link:after {
+        display: none;
+    }
+    
+    .header-button-container {
+        display: none;
+    }
+}
+
+/* ===== Улучшенный Hero раздел ===== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.parallax-bg {
+    transform: translateZ(-1px) scale(1.5);
+    transition: transform 0.3s ease;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero .typed {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-main {
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-main:hover {
+    background: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 120, 255, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    padding: 11px 29px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 1px solid white;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.hero-scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.scroll-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-7px);
+    }
+}
+
+/* ===== Улучшенный раздел Обо мне ===== */
+.about-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.about-image-container img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.about-image-container:hover img {
+    transform: scale(1.03);
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: 20px;
+    right: -10px;
+    background: linear-gradient(135deg, var(--primary-color), #584dc3);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.experience-badge:hover {
+    transform: translateY(-5px);
+}
+
+.about-content {
+    padding: 20px;
+}
+
+.company-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: var(--secondary-background);
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--text-color);
+    margin: 3px;
+    transition: all 0.3s ease;
+}
+
+.company-tag:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Секция навыков */
+.skills-section {
+    margin-top: 30px;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.skill-label {
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill-bar {
+    height: 8px;
+    background-color: var(--secondary-background);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary-color), #584dc3);
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.1, 0.5, 0.2, 1);
+    width: 0;
+}
+
+/* ===== Улучшенные карточки услуг ===== */
+.service-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #eeedf9, #ffffff);
+    color: var(--primary-color);
+    transition: all 0.4s ease;
+}
+
+.service-card:hover .icon-circle {
+    background: linear-gradient(135deg, var(--primary-color), #584dc3);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.service-card h4 {
+    font-weight: 600;
+    color: var(--heading-color);
+    transition: all 0.3s ease;
+}
+
+.price-tag {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.btn-service {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-service:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Эффект переворота карточки */
+.service-hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.service-card:hover .service-hover-content {
+    opacity: 1;
+    transform: rotateY(0);
+}
+
+.service-card:hover .service-content {
+    opacity: 0;
+    transform: rotateY(-180deg);
+}
+
+.service-content {
+    transition: all 0.5s ease;
+    backface-visibility: hidden;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    text-align: left;
+    width: 100%;
+}
+
+.service-features li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.service-features li i {
+    color: var(--primary-color);
+    margin-top: 2px;
+}
+
+.btn-service-alt {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.btn-service-alt:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ===== Улучшенная секция с фактами ===== */
+.stats-item {
+    padding: 30px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.stats-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.counter-container {
+    font-size: 48px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+}
+
+.counter {
+    display: inline-block;
+}
+
+/* ===== Улучшенная галерея сертификатов ===== */
+.certificates-filters {
+    margin-bottom: 30px;
+}
+
+.filter-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-menu li {
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: var(--secondary-background);
+}
+
+.filter-menu li:hover,
+.filter-menu li.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.certificate-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: all 0.4s ease;
+    height: 250px;
+}
+
+.certificate-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+.certificate-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.certificate-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.certificate-card:hover .certificate-img img {
+    transform: scale(1.1);
+}
+
+.certificate-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 120, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.certificate-card:hover .certificate-overlay {
+    opacity: 1;
+}
+
+.certificate-overlay a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transform: scale(0);
+    transition: all 0.3s ease 0.1s;
+}
+
+.certificate-card:hover .certificate-overlay a {
+    transform: scale(1);
+}
+
+.certificate-overlay a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ===== Улучшенная секция FAQ ===== */
+.faq-item {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.faq-item h3 {
+    padding: 20px;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.faq-item h3 .num {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.faq-toggle {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0);
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+}
+
+.faq-active .faq-toggle {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.faq-content {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-active .faq-content {
+    padding: 0 20px 20px;
+    max-height: 1000px;
+}
+
+/* ===== Улучшенная секция отзывов ===== */
+.testimonial-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.testimonial-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.testimonial-item h3 {
+    margin-bottom: 10px;
+}
+
+.testimonial-item .stars {
+    margin-bottom: 15px;
+    color: #ffc107;
+}
+
+.testimonial-item p {
+    font-style: italic;
+    position: relative;
+}
+
+.quote-icon-left,
+.quote-icon-right {
+    font-size: 24px;
+    opacity: 0.5;
+}
+
+/* ===== Улучшенная секция контактов ===== */
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    border-radius: 15px;
+    background-color: var(--card-background);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: all 0.3s ease;
+    height: 100%;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary-background), var(--background-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.contact-icon i {
+    font-size: 24px;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    background: linear-gradient(135deg, var(--primary-color), #584dc3);
+}
+
+.contact-card:hover .contact-icon i {
+    color: white;
+}
+
+.contact-card h5 {
+    margin-top: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover h5 {
+    color: var(--primary-color);
+}
+
+.php-email-form {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+}
+
+.form-control {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--secondary-background);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 120, 255, 0.25);
+    background-color: var(--background-color);
+}
+
+.send-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 120, 255, 0.3);
+}
+
+.send-button i {
+    margin-left: 8px;
+    transition: all 0.3s ease;
+}
+
+.send-button:hover i {
+    transform: translateX(5px);
+}
+
+/* ===== Кнопка скролла вверх ===== */
+.scroll-top {
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.scroll-top.active {
+    opacity: 1;
+    visibility: visible;
+    bottom: 30px;
+}
+
+.scroll-top:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+}
+
+.scroll-top i {
+    font-size: 24px;
+}
+
+/* ===== Адаптивные стили ===== */
+@media (max-width: 991px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .typed {
+        font-size: 1.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .experience-badge {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    
+    .about-image-container {
+        margin-bottom: 30px;
+    }
+    
+    .company-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-title h2 {
+        font-size: 28px;
+    }
+    
+    .service-card {
+        margin-bottom: 20px;
+    }
+    
+    .faq-item h3 {
+        font-size: 16px;
+        padding: 15px;
+    }
+    
+    .contact-card {
+        margin-bottom: 20px;
+    }
+    
+    .btn-telegram span {
+        display: none;
+    }
+    
+    .btn-telegram {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .counter-container {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons .btn-main,
+    .hero-buttons .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .skills-section {
+        display: none;
+    }
+    
+    .filter-menu li {
+        padding: 6px 15px;
+        font-size: 14px;
+    }
+}
+
+/* ===== Анимации при прокрутке ===== */
+[data-aos] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-aos="fade-right"] {
+    transform: translateX(-30px);
+}
+
+[data-aos="fade-left"] {
+    transform: translateX(30px);
+}
+
+[data-aos="fade-right"].aos-animate,
+[data-aos="fade-left"].aos-animate {
+    transform: translateX(0);
+}
+
+/* ===== Дополнительные анимации ===== */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinning {
+    animation: spin 10s linear infinite;
+}
+
+/* ===== Современный стиль для форм ===== */
+input::placeholder,
+textarea::placeholder {
+    color: var(--muted-color);
+    opacity: 0.7;
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--heading-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* ===== Микроанимации ===== */
+.micro-animation {
+    transition: all 0.3s ease;
+}
+
+.micro-animation:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Улучшенный футер ===== */
+.footer {
+    background-color: var(--background-color);
+    padding: 40px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer .copyright p {
+    color: var(--text-color);
+}
+
+.footer .social-links a {
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.footer .social-links a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* ===== Темная тема блок Профессий ===== */
+[data-theme="dark"] .recruitment-section {
+    background-color: var(--secondary-background);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .section-title-prof,
+[data-theme="dark"] .resume-count {
+    color: var(--heading-color);
+}
+
+[data-theme="dark"] .info-text,
+[data-theme="dark"] .feature-desc {
+    color: var(--muted-color);
+}
+
+[data-theme="dark"] .feature-title {
+    color: var(--heading-color);
+}
+
+[data-theme="dark"] .resume-card {
+    background-color: var(--card-background);
+}
+
+[data-theme="dark"] .resume-title {
+    color: var(--heading-color);
+}
+
+[data-theme="dark"] .resume-desc {
+    color: var(--muted-color);
+}
+
+/* ===== Плавная прокрутка ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== Эффект выделения при наведении ===== */
+.highlight-hover {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.highlight-hover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.highlight-hover:hover::after {
+    width: 100%;
+}
+
+/* ===== Индикатор прогресса прокрутки ===== */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary-color), #584dc3);
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.2s ease;
+}
+
+/* ===== Эффект прозрачности для хедера ===== */
+.header {
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+}
+
+.header:not(.scrolled) {
+    background-color: rgba(var(--background-color-rgb, 255, 255, 255), 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.scrolled .header {
+    background-color: var(--background-color);
+}
+
+/* ===== Эффект появления для списка профессий ===== */
+.resume-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.resume-card:nth-child(1) { animation-delay: 0.1s; }
+.resume-card:nth-child(2) { animation-delay: 0.2s; }
+.resume-card:nth-child(3) { animation-delay: 0.3s; }
+.resume-card:nth-child(4) { animation-delay: 0.4s; }
+.resume-card:nth-child(5) { animation-delay: 0.5s; }
+.resume-card:nth-child(6) { animation-delay: 0.6s; }
+.resume-card:nth-child(7) { animation-delay: 0.7s; }
+.resume-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* ===== Стилизация прокрутки ===== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--secondary-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-hover);
+}
+
+/* ===== Стилизация выделения текста ===== */
+::selection {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ===== Улучшения для доступности ===== */
+.btn:focus, 
+.form-control:focus,
+button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ===== Улучшения для печати ===== */
+@media print {
+    .header, 
+    .footer,
+    .scroll-top,
+    .scroll-progress,
+    .navbar {
+        display: none !important;
+    }
+    
+    section, .section {
+        page-break-inside: avoid;
+        padding: 10px 0;
+    }
+    
+    body {
+        background-color: white !important;
+        color: black !important;
+    }
+    
+    a {
+        text-decoration: underline;
+        color: #000 !important;
+    }
+    
+    .hero-img {
+        max-width: 50% !important;
+        margin: 0 auto;
+    }
+}
+
+/* ===== Поддержка RTL языков ===== */
+[dir="rtl"] .navmenu .nav-link:after {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .hero-scroll-hint {
+    left: auto;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+/* ===== Уведомления и оповещения ===== */
+.notification {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    border-left: 4px solid;
+}
+
+.notification.success {
+    background-color: rgba(40, 167, 69, 0.1);
+    border-color: #28a745;
+    color: #155724;
+}
+
+.notification.info {
+    background-color: rgba(23, 162, 184, 0.1);
+    border-color: #17a2b8;
+    color: #0c5460;
+}
+
+.notification.warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-color: #ffc107;
+    color: #856404;
+}
+
+.notification.error {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+/* Темная тема для уведомлений */
+[data-theme="dark"] .notification.success {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #8fd19e;
+}
+
+[data-theme="dark"] .notification.info {
+    background-color: rgba(23, 162, 184, 0.2);
+    color: #86d3e0;
+}
+
+[data-theme="dark"] .notification.warning {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: #ffe083;
+}
+
+[data-theme="dark"] .notification.error {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #ee8d95;
+}
+
+/* Стили для шапки - всегда темная */
+.header {
+    background-color: #121212 !important; /* Всегда темная шапка */
+    transition: all 0.3s ease;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+}
+
+/* Не меняем цвет при прокрутке */
+.scrolled .header {
+    background-color: #121212 !important;
+    padding: 10px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для пунктов навигации */
+.navmenu .nav-link {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: #ffffff !important; /* Белый цвет текста */
+    position: relative;
+    padding: 10px 5px;
+    transition: color 0.3s ease;
+}
+
+/* Убираем двойную линию, оставляем только белую */
+.navmenu .nav-link:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff !important; /* Белая линия */
+    transition: width 0.3s ease;
+    box-shadow: none !important;
+}
+
+/* Убираем все другие подчеркивания */
+.navmenu .nav-link:before {
+    display: none !important;
+}
+
+/* Белая линия появляется при наведении */
+.navmenu .nav-link:hover:after,
+.navmenu .nav-link.active:after {
+    width: 100%;
+}
+
+/* Цвет меню при наведении - можно оставить белым или сделать голубым */
+.navmenu .nav-link:hover,
+.navmenu .nav-link.active {
+    color: #ffffff !important; /* Остается белым для лучшей читаемости */
+}
+
+/* Стили для улучшенного FAQ */
+.faq-title {
+    font-size: 32px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.faq-subtitle {
+    font-size: 42px;
+    font-weight: 700;
+    color: #121212;
+    margin-top: 0;
+}
+
+.faq-item {
+    margin-bottom: 16px;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.faq-question {
+    padding: 20px 25px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.faq-question-content {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.faq-number {
+    color: #0078ff;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.faq-text {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"] .faq-text {
+    color: #0078ff;
+}
+
+.faq-icon {
+    font-size: 18px;
+    color: #0078ff;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 25px 20px;
+    color: #444;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Для темного режима */
+[data-theme="dark"] .faq-title {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .faq-subtitle {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .faq-item {
+    background-color: #222;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .faq-text {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .faq-question[aria-expanded="true"] .faq-text {
+    color: #3d9cff;
+}
+
+[data-theme="dark"] .faq-answer {
+    color: #cccccc;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .faq-question {
+        padding: 16px 20px;
+    }
+    
+    .faq-question-content {
+        gap: 8px;
+        width: calc(100% - 25px); /* Оставляем место для иконки */
+        flex-wrap: nowrap;
+    }
+    
+    .faq-text {
+        font-size: 16px;
+    }
+    
+    .faq-answer {
+        padding: 0 20px 16px;
+        font-size: 15px;
+    }
+}
+
+/* Улучшенные стили для мобильной шапки */
+.header-controls {
+    display: flex;
+    align-items: center;
+}
+
+/* Стили для переключателя темы */
+.theme-toggle-wrapper {
+    margin-right: 5px;
+    z-index: 1001; /* Выше, чем у мобильного меню */
+}
+
+/* Стили для кнопки Телеграм */
+.btn-telegram {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #0088cc;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    z-index: 1001; /* Выше, чем у мобильного меню */
+}
+
+/* Стили для мобильного меню */
+.mobile-nav-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0078ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Медиа-запросы для мобильной адаптации */
+@media (max-width: 991px) {
+    .header .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .theme-toggle {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .mobile-nav-toggle {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+    }
+}
+/* Добавьте эти стили в ваш custom.css */
+
+/* Фиксируем шапку - всегда темная */
+.header {
+  background-color: #121212 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Улучшение расположения элементов в шапке */
+.header .container-fluid {
+  padding: 12px 15px;
+}
+
+/* Стили для переключателя темы */
+#theme-toggle {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: none;
+  margin-right: 10px;
+  z-index: 1002;
+}
+
+/* Стили для кнопки Telegram */
+.fixed-telegram-btn {
+  display: flex;
+  align-items: center;
+  background-color: #0088cc !important;
+  color: white !important;
+  border-radius: 50px !important;
+  padding: 8px 16px !important;
+  position: relative !important;
+  top: 0 !important;
+  right: 0 !important;
+  margin-right: 10px;
+  z-index: 1002;
+}
+
+/* Уменьшаем текст на маленьких экранах */
+@media (max-width: 768px) {
+  .fixed-telegram-btn span {
+    display: none;
+  }
+  
+  .fixed-telegram-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0 !important;
+    justify-content: center;
+  }
+}
+
+/* Улучшенная мобильная кнопка */
+.mobile-nav-toggle {
+  width: 38px !important;
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #0078ff !important;
+  border-radius: 50% !important;
+  border: none !important;
+  position: relative !important;
+  z-index: 1001 !important;
+}
+
+/* Исправление видимости элементов в мобильной версии */
+@media (max-width: 991px) {
+  .navmenu {
+    padding-top: 70px;
+  }
+  
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+  
+  .mobile-nav-active .navmenu {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+    overflow-y: auto;
+    transition: 0.3s;
+    padding: 70px 20px 0;
+  }
+  
+  .mobile-nav-active .mobile-nav-toggle {
+    position: fixed !important;
+    right: 15px !important;
+    top: 15px !important;
+    z-index: 1002 !important;
+  }
+}
+/* ================================================ */
+/* НОВЫЕ СТИЛИ ДЛЯ ВЫРАВНИВАНИЯ ШАПКИ        */
+/* ================================================ */
+
+/* --- Общие стили шапки --- */
+.header {
+  background-color: #121212 !important; /* Темная шапка */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 0 15px; /* Отступы по бокам */
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  height: 65px; /* Фиксированная высота шапки */
+  display: flex; /* Важно для вертикального выравнивания */
+  align-items: center; /* Важно для вертикального выравнивания */
+}
+
+.header .container-fluid {
+  display: flex;
+  align-items: center; /* Выравниваем все элементы по вертикали */
+  justify-content: space-between; /* Распределяем основные блоки */
+  width: 100%;
+  padding: 0; /* Убираем лишние отступы */
+  height: 100%; /* Занимает всю высоту header */
+}
+
+/* --- Логотип --- */
+.header .logo {
+  flex-shrink: 0; /* Не сжимать логотип */
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+}
+.header .logo-text {
+  color: #ffffff !important;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  white-space: nowrap; /* Чтобы не переносился */
+}
+
+/* --- Основное меню (Десктоп/Мобайл) --- */
+.header .main-nav {
+  height: 100%; /* Занимает всю высоту для выравнивания */
+}
+
+/* --- Блок кнопок справа --- */
+.header .header-right {
+  flex-shrink: 0; /* Не сжимать блок кнопок */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Отступ между кнопками */
+  height: 100%;
+}
+
+/* --- Общие стили для круглых кнопок --- */
+.header .header-right .btn-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.header .header-right .btn-circle i {
+   color: #ffffff;
+   font-size: 1.1rem;
+   transition: color 0.3s ease;
+}
+.header .header-right .btn-circle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Кнопка переключения темы */
+#theme-toggle {
+  /* Стили по умолчанию уже подходят */
+}
+
+/* Кнопка Telegram */
+.header .header-right .btn-telegram {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Центрируем иконку, когда нет текста */
+  height: 38px;
+  padding: 0 15px; /* Отступы для текста */
+  border-radius: 50px;
+  background-color: #0088cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, width 0.3s ease, padding 0.3s ease;
+  white-space: nowrap; /* Предотвращаем перенос */
+  overflow: hidden; /* Скрываем текст при уменьшении */
+}
+.header .header-right .btn-telegram i {
+  font-size: 1.2rem;
+  line-height: 1; /* Выравнивание иконки */
+  color: white;
+  flex-shrink: 0; /* Иконка не сжимается */
+}
+.header .header-right .btn-telegram span.btn-text {
+  font-size: 0.9rem;
+  margin-left: 8px;
+  line-height: 1; /* Выравнивание текста */
+  transition: opacity 0.3s ease, margin-left 0.3s ease;
+}
+.header .header-right .btn-telegram:hover {
+    background-color: #0077b3;
+}
+
+/* Кнопка мобильного меню */
+.header .header-right .mobile-nav-toggle {
+  background-color: #0078ff !important; /* Цвет кнопки */
+}
+.header .header-right .mobile-nav-toggle i {
+  color: white !important;
+}
+
+
+/* ================================================ */
+/* СТИЛИ ДЛЯ ДЕСКТОПА (шире 1199px)          */
+/* ================================================ */
+@media (min-width: 1200px) {
+  /* Показываем основное меню */
+  .header .main-nav {
+    display: block !important; /* Показываем */
+    flex-grow: 1; /* Занимает доступное пространство для центрирования */
+    margin: 0 20px; /* Отступы по бокам */
+  }
+
+  .header .main-nav .navmenu {
+    height: 100%;
+  }
+
+  /* Список меню - центрируем */
+  .header .main-nav ul.nav-list {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center; /* ГЛАВНОЕ: Центрируем меню */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 5px; /* Отступ между пунктами */
+    height: 100%;
+  }
+
+  /* Ссылки меню */
+  .header .main-nav ul.nav-list li a.nav-link {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Занимают всю высоту шапки */
+    padding: 0 15px; /* Отступы по бокам */
+    color: #ffffff !important;
+    text-decoration: none;
+    position: relative;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border-radius: 3px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .header .main-nav ul.nav-list li a.nav-link:after {
+      display: none; /* Убираем стандартное подчеркивание */
+  }
+  .header .main-nav ul.nav-list li a.nav-link:hover,
+  .header .main-nav ul.nav-list li a.nav-link.active {
+     background-color: rgba(255, 255, 255, 0.1);
+     color: #ffffff !important;
+  }
+
+  /* Скрываем мобильный переключатель */
+  .header .header-right .mobile-nav-toggle {
+    display: none !important;
+  }
+
+  /* Кнопка Telegram с текстом */
+  .header .header-right .btn-telegram {
+    width: auto; /* Возвращаем автоширину */
+    padding: 0 15px;
+  }
+   .header .header-right .btn-telegram span.btn-text {
+     display: inline; /* Показываем текст */
+     opacity: 1;
+     margin-left: 8px;
+   }
+}
+
+
+/* ================================================ */
+/* СТИЛИ ДЛЯ ПЛАНШЕТОВ И МОБИЛЬНЫХ (< 1200px) */
+/* ================================================ */
+@media (max-width: 1199px) {
+  /* Скрываем основное меню в шапке */
+  .header .main-nav {
+    display: none !important;
+  }
+
+  /* Показываем кнопку мобильного меню */
+  .header .header-right .mobile-nav-toggle {
+    display: flex !important;
+    order: 1; /* Кнопка меню первая */
+  }
+
+  /* Переключатель темы рядом с мобильным меню */
+  #theme-toggle {
+      order: 2; /* Кнопка темы вторая */
+  }
+
+  /* Кнопка Telegram справа и круглая */
+  .header .header-right .btn-telegram {
+      order: 3; /* Кнопка телеграм третья (крайняя справа) */
+      width: 38px; /* Делаем круглой */
+      height: 38px;
+      padding: 0; /* Убираем отступы */
+      border-radius: 50%;
+  }
+  .header .header-right .btn-telegram span.btn-text {
+      display: none; /* Скрываем текст */
+      opacity: 0;
+      margin-left: 0;
+  }
+
+  /* Стили для выезжающего меню (остаются как были) */
+  .navmenu { /* Применяется к <nav> вне header */
+    position: fixed;
+    top: 0;
+    right: -100%; /* Скрыто за экраном */
+    bottom: 0;
+    width: 300px;
+    max-width: 80%;
+    background-color: #1f1f1f; /* Фон выезжающего меню */
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    padding: 80px 20px 30px; /* Отступы внутри */
+    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Плавный выезд */
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  /* Появление меню при активации */
+  .mobile-nav-active .navmenu {
+    right: 0; /* Показываем меню */
+  }
+
+  /* Список внутри выезжающего меню */
+  .navmenu ul.nav-list {
+    display: flex;
+    flex-direction: column; /* Вертикально */
+    gap: 0;
+    padding: 0;
+    margin: 0; /* Убираем отступы у списка */
+    list-style: none;
+  }
+
+  /* Ссылки внутри выезжающего меню */
+  .navmenu ul.nav-list li a.nav-link {
+    padding: 12px 15px; /* Отступы */
+    display: block; /* Занимает всю ширину */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e0e0e0 !important;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .navmenu ul.nav-list li:last-child a.nav-link {
+    border-bottom: none;
+  }
+  .navmenu ul.nav-list li a.nav-link:hover,
+  .navmenu ul.nav-list li a.nav-link.active {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  .navmenu ul.nav-list li a.nav-link:after {
+    display: none; /* Убираем подчеркивание */
+  }
+
+  /* Блокировка прокрутки фона при открытом меню */
+  body.mobile-nav-active {
+    overflow: hidden;
+  }
+}
+
+/* Дополнительная настройка для очень маленьких экранов */
+@media (max-width: 480px) {
+    .header .logo-text {
+        font-size: 1.2rem; /* Уменьшаем логотип */
+    }
+    .header .header-right {
+        gap: 5px; /* Уменьшаем отступ между кнопками */
+    }
+    .header .header-right .btn-circle,
+    .header .header-right .btn-telegram {
+        width: 35px;
+        height: 35px;
+    }
+    .header .header-right .btn-circle i,
+    .header .header-right .btn-telegram i {
+        font-size: 1rem;
+    }
+}
+
+/* --- НОВЫЕ СТИЛИ ДЛЯ ПЕРЕКЛЮЧАТЕЛЯ ТЕМЫ --- */
+
+/* Стили самой кнопки (добавляем position: relative на всякий случай) */
+#theme-toggle {
+  position: relative; /* Контекст для позиционирования иконок, если понадобится */
+  overflow: hidden; /* Скрываем все, что может выйти за пределы */
+  /* Другие стили кнопки .btn-circle остаются как есть (размер, цвет фона и т.д.) */
+}
+
+/* Общие стили для иконок внутри кнопки */
+#theme-toggle i {
+  display: none; /* По умолчанию скрываем обе иконки */
+  font-size: 1.1rem; /* Размер иконки (можно настроить) */
+  color: #ffffff; /* Цвет иконки (т.к. шапка темная) */
+  line-height: 1; /* Для лучшего выравнивания */
+  transition: color 0.3s ease; /* Плавная смена цвета, если нужно */
+  position: absolute; /* Позиционируем иконки */
+  top: 50%; /* Выравниваем по центру */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Точное центрирование */
+}
+
+/* Показываем СОЛНЦЕ при СВЕТЛОЙ теме (по умолчанию) */
+html:not([data-theme="dark"]) #theme-toggle .sun-icon {
+  display: inline-block; /* Или block */
+}
+
+/* Показываем ЛУНУ при ТЕМНОЙ теме */
+html[data-theme="dark"] #theme-toggle .moon-icon {
+  display: inline-block; /* Или block */
+}
+
+/* ================================================ */
+/* ПОВЫШЕНИЕ ПРИОРИТЕТА ДЛЯ МОБИЛЬНОГО МЕНЮ */
+/* ================================================ */
+@media (max-width: 1199px) {
+
+    /* Исходное состояние меню - ТОЧНО скрыто */
+    body:not(.mobile-nav-active) nav#main-nav.navmenu {
+        position: fixed;
+        top: 0;
+        right: -100% !important; /* Убедимся, что оно скрыто */
+        bottom: 0;
+        width: 300px;
+        max-width: 80%;
+        background-color: #1f1f1f;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+        padding: 70px 20px 30px; /* Отступ сверху, чтобы не заезжало под шапку */
+        overflow-y: auto;
+        z-index: 999 !important; /* Высокий z-index */
+        visibility: hidden; /* Дополнительно скрываем */
+        opacity: 0; /* Делаем невидимым */
+        transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                    visibility 0s linear 0.4s,  /* Отложенное скрытие visibility */
+                    opacity 0.4s ease;       /* Плавное появление/исчезание */
+        display: block !important; /* Убедимся, что не display:none */
+    }
+
+    /* Состояние меню - ТОЧНО показано */
+    body.mobile-nav-active nav#main-nav.navmenu {
+        right: 0 !important; /* Выдвигаем */
+        visibility: visible !important; /* Делаем видимым */
+        opacity: 1 !important;          /* Делаем непрозрачным */
+        transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                    visibility 0s linear 0s,   /* Немедленное появление visibility */
+                    opacity 0.4s ease;        /* Плавное появление/исчезание */
+    }
+
+    /* Стили для ссылок внутри (оставляем как было или ваши текущие) */
+    body.mobile-nav-active nav#main-nav.navmenu ul.nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    body.mobile-nav-active nav#main-nav.navmenu ul.nav-list li a.nav-link {
+        padding: 12px 15px;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: #e0e0e0 !important;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+     body.mobile-nav-active nav#main-nav.navmenu ul.nav-list li:last-child a.nav-link {
+         border-bottom: none;
+     }
+    body.mobile-nav-active nav#main-nav.navmenu ul.nav-list li a.nav-link:hover,
+    body.mobile-nav-active nav#main-nav.navmenu ul.nav-list li a.nav-link.active {
+        color: #ffffff !important;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+/* ============================================ */
+/* НОВЫЕ СТИЛИ ДЛЯ МОБИЛЬНОГО МЕНЮ V2         */
+/* ============================================ */
+
+/* --- Стили для экранов меньше 1200px --- */
+@media (max-width: 1199px) {
+
+  /* --- Кнопка-бургер (дополнительно) --- */
+  #mobile-toggle {
+    /* Стили из .btn-circle уже должны применяться */
+    /* Можно добавить стили для активного состояния, если нужно */
+    z-index: 1100; /* Выше оверлея и панели */
+    position: relative; /* Чтобы иконка была внутри */
+  }
+
+   /* Иконки внутри кнопки (замена через JS) */
+  #mobile-toggle i {
+     transition: transform 0.3s ease;
+  }
+
+  /* --- Оверлей (затемнение фона) --- */
+  .mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный */
+    z-index: 1001; /* Ниже панели, выше контента */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+  }
+
+  /* --- Панель меню --- */
+  .mobile-nav-panel {
+    position: fixed;
+    top: 0;
+    left: 0; /* Появляется слева */
+    width: 300px; /* Ширина панели */
+    max-width: 85%; /* Не шире 85% экрана */
+    height: 100%;
+    background-color: #1f1f1f; /* Темный фон панели */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3); /* Тень справа */
+    z-index: 1002; /* Выше оверлея */
+    padding: 20px;
+    padding-top: 70px; /* Отступ сверху под шапку */
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%); /* Скрыто слева */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow-y: auto; /* Прокрутка, если не влезает */
+  }
+
+  /* Шапка панели меню */
+  .mobile-nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: absolute; /* Фиксируем шапку панели */
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 65px; /* Высота шапки сайта */
+      padding: 0 20px;
+      background-color: #1f1f1f; /* Фон шапки панели */
+  }
+  .mobile-nav-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffffff;
+  }
+  .mobile-nav-close {
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 2.5rem;
+      font-weight: 300;
+      line-height: 1;
+      padding: 0;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+  }
+   .mobile-nav-close:hover {
+       opacity: 1;
+   }
+
+  /* Список ссылок */
+  .mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-nav-list li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+   .mobile-nav-list li:last-child {
+      border-bottom: none;
+   }
+  .mobile-nav-link {
+    display: block;
+    padding: 14px 0; /* Вертикальные отступы */
+    color: #e0e0e0; /* Цвет ссылок */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  .mobile-nav-link:hover,
+  .mobile-nav-link.active { /* Если будете добавлять класс active */
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05); /* Легкая подсветка */
+  }
+
+  /* --- Состояние "Меню открыто" --- */
+  body.mobile-menu-open {
+    overflow: hidden; /* Запрет прокрутки фона */
+  }
+  body.mobile-menu-open .mobile-nav-overlay {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s; /* Показываем сразу */
+  }
+  body.mobile-menu-open .mobile-nav-panel {
+    transform: translateX(0); /* Выдвигаем панель */
+  }
+
+} /* Конец @media (max-width: 1199px) */
+
+/* Скрываем новую панель и оверлей на десктопе */
+@media (min-width: 1200px) {
+  .mobile-nav-overlay,
+  .mobile-nav-panel {
+    display: none !important;
+  }
+}
+
+/* Стили для блока с резюме */
+.recruitment-section {
+    display: flex;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 40px 0;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    padding: 0;
+}
+
+/* Стили для информационной колонки */
+.info-section {
+    flex: 1;
+    padding: 40px;
+    max-width: 50%;
+}
+
+.section-title-prof {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+}
+
+.resume-count {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.info-text {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.feature-item {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.feature-item i {
+    font-style: normal;
+    color: var(--primary-color);
+    margin-right: 15px;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.feature-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--heading-color);
+}
+
+.feature-desc {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 120, 255, 0.3);
+}
+
+/* Стили для колонки с прокручивающимися карточками */
+.cards-section {
+    flex: 1; /* Чтобы занимал доступное место рядом с .info-section */
+    background-color: var(--secondary-background);
+    position: relative;
+    overflow: hidden; /* ОБЯЗАТЕЛЬНО: Скрывает "лишнее" */
+    /* Установите высоту явно или через flex-контейнер родителя */
+     /* min-height: 500px; */ /* Можно убрать или оставить */
+     height: 500px; /* Пример: задаем фиксированную высоту */
+     /* Убедитесь, что .recruitment-section является flex-контейнером */
+}
+
+/* Новый контейнер, к которому применяется анимация */
+.resume-list-animated-wrapper {
+    width: 100%;
+    /* Высота определяется содержимым (двумя блоками .resume-list-inner) */
+    animation: scrollCards 20s linear infinite; /* Применяем анимацию сюда */
+}
+
+/* Пауза анимации при наведении на ВНЕШНИЙ контейнер .cards-section */
+.cards-section:hover .resume-list-animated-wrapper {
+     animation-play-state: paused;
+}
+
+/* Внутренний блок для ОДНОГО набора карточек */
+.resume-list-inner {
+    width: 100%;
+    padding: 20px; /* Отступы внутри блока */
+    box-sizing: border-box;
+    display: flex; /* Используем flex для управления карточками внутри */
+    flex-direction: column;
+    gap: 15px; /* Расстояние между карточками */
+}
+
+/* Анимация (логика та же, но применяется к wrapper) */
+@keyframes scrollCards {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        /* Смещаем wrapper вверх на высоту ОДНОГО блока .resume-list-inner */
+        transform: translateY(-50%);
+    }
+}
+
+/* --- СТИЛИ КАРТОЧКИ (остаются без изменений) --- */
+.resume-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 15px;
+    /* margin-bottom больше не нужен, используется gap */
+    box-shadow: 0 2px 10px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0; /* Карточки не должны сжиматься */
+}
+
+.resume-card:hover {
+    transform: translateX(-5px); /* Небольшой сдвиг при наведении на саму карточку */
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.resume-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.resume-details {
+    flex: 1;
+    min-width: 0; /* Позволяет тексту переноситься */
+}
+
+.resume-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    color: var(--heading-color);
+}
+
+.resume-desc {
+    font-size: 14px;
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.4;
+}
+
+
+/* УБЕДИТЕСЬ, что старые правила для .resume-list и .resume-list:hover удалены или закомментированы */
+/*
+.resume-list { ... animation: scrollCards ... }
+.resume-list:hover { ... animation-play-state: paused ... }
+*/
+
+/* Темная тема (просто убедимся, что селекторы верны) */
+[data-theme="dark"] .cards-section {
+   background-color: var(--secondary-background);
+}
+[data-theme="dark"] .resume-card {
+  background-color: var(--card-background);
+  box-shadow: 0 2px 10px var(--shadow-color);
+}
+[data-theme="dark"] .resume-card:hover {
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+[data-theme="dark"] .resume-title {
+    color: var(--heading-color);
+}
+[data-theme="dark"] .resume-desc {
+    color: var(--text-color);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 991px) {
+    .recruitment-section {
+        flex-direction: column;
+    }
+    
+    .info-section {
+        max-width: 100%;
+        padding: 30px;
+    }
+    
+    .cards-section {
+        min-height: 300px;
+    }
+    
+    .resume-list {
+        animation-duration: 15s;
+    }
+}
+
+@media (max-width: 576px) {
+    .info-section {
+        padding: 20px;
+    }
+    
+    .section-title-prof {
+        font-size: 22px;
+    }
+    
+    .resume-count {
+        font-size: 28px;
+    }
+    
+    .feature-title {
+        font-size: 16px;
+    }
+    
+    .feature-desc {
+        font-size: 13px;
+    }
+    
+    .resume-card {
+        padding: 10px;
+    }
+    
+    .resume-image {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .resume-title {
+        font-size: 14px;
+    }
+    
+    .resume-desc {
+        font-size: 12px;
+    }
+}
+
+/* Современные стили для блока цен */
+.pricing {
+    padding: 80px 0;
+    background-color: var(--background-color);
+}
+
+/* Анимированные карточки цен */
+.pricing-card-animated {
+    position: relative;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    transition: all 0.4s ease;
+    background-color: var(--card-background);
+}
+
+.pricing-card-animated:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+.pricing-card-animated.featured {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.05);
+}
+
+.pricing-card-animated.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.pricing-card-inner {
+    padding: 40px 25px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.pricing-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, var(--primary-color), #584dc3);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.pricing-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(0, 120, 255, 0.1), rgba(88, 77, 195, 0.1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: all 0.4s ease;
+}
+
+.pricing-card-animated:hover .pricing-icon {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, var(--primary-color), #584dc3);
+}
+
+.pricing-icon i {
+    font-size: 30px;
+    color: var(--primary-color);
+    transition: all 0.4s ease;
+}
+
+.pricing-card-animated:hover .pricing-icon i {
+    color: white;
+}
+
+.pricing-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--heading-color);
+}
+
+.pricing-price {
+    margin: 20px 0;
+}
+
+.pricing-price span {
+    font-size: 16px;
+    color: var(--muted-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.pricing-price h4 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+    text-align: left;
+}
+
+.pricing-features li {
+    margin-bottom: 10px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+.pricing-features li i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.pricing-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+}
+
+.pricing-btn:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.pricing-disclaimer {
+    margin-top: 40px;
+    color: var(--muted-color);
+    font-size: 14px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 991px) {
+    .pricing-card-animated.featured {
+        transform: scale(1);
+    }
+    
+    .pricing-card-animated.featured:hover {
+        transform: translateY(-10px);
+    }
+    
+    .pricing-title {
+        font-size: 20px;
+    }
+    
+    .pricing-price h4 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 767px) {
+    .pricing {
+        padding: 60px 0;
+    }
+    
+    .pricing-card-inner {
+        padding: 30px 20px;
+    }
+    
+    .pricing-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .pricing-icon i {
+        font-size: 25px;
+    }
+    
+    .pricing-features li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 575px) {
+    .pricing {
+        padding: 40px 0;
+    }
+    
+    .pricing-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .pricing-title {
+        font-size: 18px;
+    }
+    
+    .pricing-price h4 {
+        font-size: 24px;
+    }
+    
+    .pricing-btn {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Темная тема */
+[data-theme="dark"] .pricing-icon {
+    background: linear-gradient(135deg, rgba(61, 156, 255, 0.1), rgba(90, 87, 195, 0.1));
+}
+
+[data-theme="dark"] .pricing-card-animated:hover .pricing-icon {
+    background: linear-gradient(135deg, var(--primary-color), #5a57c3);
+}
+
+/* Обеспечение одинаковой высоты для всех карточек */
+.pricing .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pricing .col-lg-4 {
+    display: flex;
+}
+
+.pricing-card-animated {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.pricing-card-inner {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.pricing-features {
+    flex-grow: 1;
+    min-height: 120px; /* Минимальная высота для списка функций */
+    margin-bottom: 20px;
+}
+
+.pricing-title {
+    min-height: 52px; /* Минимальная высота для заголовка */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Современные карточки контактов с анимациями */
+.contact-cards-wrapper {
+    padding: 20px 0 40px;
+}
+
+.modern-contact-card {
+    display: block;
+    height: 100%;
+    background-color: var(--card-background);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
+
+.modern-contact-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 20%, rgba(255, 255, 255, 0.05) 40%, rgba(255, 255, 255, 0.1) 60%, transparent 80%);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease, transform 1.5s ease;
+    transform: translateX(-100%) rotate(45deg);
+}
+
+.modern-contact-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    color: var(--text-color);
+}
+
+.modern-contact-card:hover::before {
+    opacity: 1;
+    transform: translateX(100%) rotate(45deg);
+}
+
+.card-content {
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.icon-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
+}
+
+.icon-circle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.icon-ring {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px dashed transparent;
+    z-index: 1;
+    transition: all 0.6s ease;
+}
+
+.modern-contact-card:hover .icon-circle {
+    transform: scale(1.15);
+}
+
+.modern-contact-card:hover .icon-ring {
+    transform: rotate(90deg);
+    border-color: var(--primary-color);
+}
+
+.icon-circle i {
+    font-size: 32px;
+    transition: all 0.4s ease;
+}
+
+.modern-contact-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.contact-info {
+    font-size: 14px;
+    color: var(--muted-color);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.hover-text {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+.modern-contact-card:hover .hover-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Индивидуальные стили для каждой карты */
+.email-card .icon-circle i {
+    color: #0078ff;
+}
+
+.telegram-card .icon-circle i {
+    color: #0088cc;
+}
+
+.instagram-card .icon-circle i {
+    color: #e1306c;
+}
+
+.vk-card .icon-circle i {
+    color: #4a76a8;
+}
+
+.modern-contact-card:hover .icon-circle {
+    background: linear-gradient(135deg, var(--primary-color), #584dc3);
+}
+
+.modern-contact-card:hover .icon-circle i {
+    color: white;
+}
+
+/* Темная тема */
+[data-theme="dark"] .modern-contact-card {
+    background-color: var(--card-background);
+}
+
+[data-theme="dark"] .icon-circle {
+    background-color: var(--background-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптивность */
+@media (max-width: 991px) {
+    .contact-cards-wrapper {
+        padding: 0 0 30px;
+    }
+    
+    .card-content {
+        padding: 30px 15px;
+    }
+    
+    .icon-container {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+    
+    .icon-circle {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .icon-ring {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .icon-circle i {
+        font-size: 28px;
+    }
+    
+    .modern-contact-card h4 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    .modern-contact-card {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}/* Стили для секции кейсов */
+.cases {
+    padding: 80px 0;
+    background-color: var(--background-color);
+}
+
+/* Карточка кейса */
+.case-card {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    height: 100%;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+}
+
+.case-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 20%, rgba(255, 255, 255, 0.05) 40%, rgba(255, 255, 255, 0.1) 60%, transparent 80%);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease, transform 1.5s ease;
+    transform: translateX(-100%) rotate(45deg);
+}
+
+.case-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px var(--shadow-color);
+}
+
+.case-card:hover::before {
+    opacity: 1;
+    transform: translateX(100%) rotate(45deg);
+}
+
+/* Заголовок кейса */
+.case-header {
+    background: linear-gradient(135deg, var(--primary-color), #0078ff);
+    color: white;
+    padding: 25px 30px;
+    position: relative;
+}
+
+.case-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 5px;
+ color: white; /* 👈 Добавлено для белого цвета */
+}
+
+
+.case-tag {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Содержимое кейса */
+.case-content {
+    padding: 30px;
+}
+
+.case-section {
+    margin-bottom: 25px;
+}
+
+.case-section .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.case-section .section-title:before {
+    content: "";
+    width: 20px;
+    height: 2px;
+    background-color: var(--primary-color);
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.case-section p {
+    color: var(--text-color);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Статистика */
+.case-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 100px;
+    background-color: var(--secondary-background);
+    border-radius: 10px;
+    padding: 15px 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(0, 120, 255, 0.1);
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--muted-color);
+}
+
+/* Блок результата */
+.case-result {
+    background-color: rgba(0, 120, 255, 0.05);
+    border-left: 3px solid var(--primary-color);
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+}
+
+.result-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+.case-result p {
+    margin-bottom: 0;
+}
+
+/* Слайдер */
+.cases-container {
+    padding-bottom: 60px;
+}
+
+.cases-pagination {
+    bottom: 0 !important;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 30px;
+    border-radius: 6px;
+}
+
+/* Кнопки навигации */
+.cases-prev,
+.cases-next {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.cases-prev:after,
+.cases-next:after {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cases-prev:hover,
+.cases-next:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.1);
+}
+
+/* Адаптивные стили */
+@media (max-width: 991px) {
+    .case-header {
+        padding: 20px 25px;
+    }
+    
+    .case-title {
+        font-size: 22px;
+    }
+    
+    .case-content {
+        padding: 25px;
+    }
+    
+    .case-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .stat-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .cases {
+        padding: 60px 0;
+    }
+    
+    .case-header {
+        padding: 18px 20px;
+    }
+    
+    .case-title {
+        font-size: 20px;
+    }
+    
+    .case-content {
+        padding: 20px;
+    }
+    
+    .case-section .section-title {
+        font-size: 17px;
+    }
+    
+    .case-result {
+        padding: 15px;
+    }
+    
+    .stat-value {
+        font-size: 24px;
+    }
+    
+    .stat-label {
+        font-size: 13px;
+    }
+}
+
+/* Темная тема */
+[data-theme="dark"] .case-card {
+    background-color: var(--card-background);
+}
+
+[data-theme="dark"] .case-result {
+    background-color: rgba(61, 156, 255, 0.1);
+}
+
+[data-theme="dark"] .stat-item:hover {
+    background-color: rgba(61, 156, 255, 0.15);
+}
+
+/* Исправление для кнопок навигации в слайдере кейсов */
+
+/* Отодвигаем кнопки от основного контента */
+.cases-prev {
+    left: -25px !important; /* Сдвигаем кнопку "Предыдущий" левее */
+}
+
+.cases-next {
+    right: -25px !important; /* Сдвигаем кнопку "Следующий" правее */
+}
+
+/* Улучшаем видимость кнопок */
+.cases-prev, 
+.cases-next {
+    z-index: 10; /* Увеличиваем z-index для гарантии отображения поверх контента */
+    opacity: 0.8; /* Делаем немного прозрачными по умолчанию */
+    transition: opacity 0.3s ease, transform 0.3s ease !important; /* Плавный переход */
+}
+
+.cases-prev:hover, 
+.cases-next:hover {
+    opacity: 1; /* Полная непрозрачность при наведении */
+}
+
+/* Исправляем проблему с анимацией карточек кейсов */
+.case-card {
+    overflow: hidden !important; /* Гарантируем, что содержимое не выйдет за пределы */
+    transform: translateY(0) !important; /* Сбрасываем начальную трансформацию */
+    transition: box-shadow 0.4s ease, transform 0.4s ease !important; /* Уточняем переходы */
+}
+
+.case-card:hover {
+    transform: translateY(-10px) !important; /* Гарантируем правильное поведение при наведении */
+    box-shadow: 0 15px 40px var(--shadow-color) !important;
+}
+
+/* Гарантируем, что эффект свечения не выходит за пределы карточки */
+.case-card::before {
+    z-index: 0 !important; /* Устанавливаем z-index меньше, чем у содержимого */
+    pointer-events: none !important; /* Отключаем события мыши для псевдоэлемента */
+}
+
+/* Защищаем контент от перекрытия */
+.cases-container {
+    position: relative;
+    overflow: visible;
+    padding: 0 30px; /* Добавляем отступы для кнопок */
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 767px) {
+    .cases-prev {
+        left: -15px !important; /* Уменьшаем отступ на мобильных */
+    }
+    
+    .cases-next {
+        right: -15px !important; /* Уменьшаем отступ на мобильных */
+    }
+    
+    .cases-container {
+        padding: 0 20px; /* Уменьшаем боковые padding на мобильных */
+    }
+}
+
+/* Улучшенный CSS для секции кейсов */
+
+/* Стили для контейнера кейсов */
+.cases-container {
+    padding: 0 50px; /* Добавляем отступы для кнопок */
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Стили для кнопок навигации */
+.cases-prev,
+.cases-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #0078ff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cases-prev {
+    left: 5px; /* Отступ слева */
+}
+
+.cases-next {
+    right: 5px; /* Отступ справа */
+}
+
+.cases-prev:hover,
+.cases-next:hover {
+    background-color: #0069d9;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для карточек кейсов */
+.case-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background-color: white;
+    height: 100%;
+}
+
+.case-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Стили для заголовка кейса */
+.case-header {
+    background: linear-gradient(135deg, #0078ff, #0069d9);
+    color: white;
+    padding: 20px 25px;
+}
+
+.case-title {
+    color: white !important;
+    margin-bottom: 8px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* Стили для тега кейса */
+.case-tag {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* Стили для содержимого кейса */
+.case-content {
+    padding: 25px;
+}
+
+/* Стили для разделов внутри кейса */
+.case-section {
+    margin-bottom: 20px;
+}
+
+.case-section .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Стили для статистики */
+.case-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 100px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px 10px;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0078ff;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* Стили для блока результата */
+.case-result {
+    background-color: rgba(0, 120, 255, 0.05);
+    border-left: 3px solid #0078ff;
+    padding: 15px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 20px;
+}
+
+.result-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Стили для пагинации */
+.cases-pagination {
+    position: static;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #0078ff;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 25px;
+    border-radius: 5px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 991px) {
+    .case-header {
+        padding: 15px 20px;
+    }
+    
+    .case-title {
+        font-size: 20px;
+    }
+    
+    .case-content {
+        padding: 20px;
+    }
+    
+    .case-section .section-title {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cases-container {
+        padding: 0 35px; /* Уменьшаем отступы на мобильных */
+    }
+    
+    .case-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .stat-item {
+        width: 100%;
+    }
+    
+    .stat-value {
+        font-size: 22px;
+    }
+    
+    .cases-prev,
+    .cases-next {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Исправление большого пространства между секциями на сайте */
+
+
+/* Дополнительная оптимизация отступов на странице */
+.section {
+    padding: 60px 0; /* Уменьшаем стандартные отступы для всех секций */
+}
+
+
+.section-title h2 {
+  text-align: center;
+}
+
+/* ... (ваш существующий CSS) ... */
+
+/* ===== Темная тема для секции кейсов ===== */
+[data-theme="dark"] .cases-section {
+    background-color: var(--background-color); /* Фон секции */
+    /* Можно оставить var(--background-color) или использовать var(--secondary-background),
+       в зависимости от желаемого вида */
+}
+
+[data-theme="dark"] .cases-section .section-title {
+    color: var(--heading-color); /* Цвет заголовка секции */
+}
+
+[data-theme="dark"] .cases-section .section-subtitle {
+    color: var(--muted-color); /* Цвет подзаголовка секции */
+}
+
+[data-theme="dark"] .case-card {
+    background-color: var(--card-background); /* Фон карточки */
+    box-shadow: 0 10px 30px var(--shadow-color); /* Тень карточки */
+}
+
+[data-theme="dark"] .case-card:hover {
+    box-shadow: 0 15px 40px var(--shadow-color);
+}
+
+/* Заголовок карточки уже использует градиент,
+   но можно убедиться, что цвет текста белый */
+[data-theme="dark"] .case-header {
+     /* Можно оставить градиент или задать сплошной цвет, например: */
+     /* background: var(--surface-color); */
+     /* Или оставить как есть, градиент может смотреться хорошо и в темной теме */
+}
+
+[data-theme="dark"] .case-title {
+    color: #ffffff; /* Убедимся, что заголовок в шапке карточки белый */
+}
+
+[data-theme="dark"] .case-tag {
+    background-color: rgba(255, 255, 255, 0.1); /* Немного другой фон для тега */
+    color: var(--text-color); /* Цвет текста тега */
+}
+
+[data-theme="dark"] .case-content {
+    /* Фон уже задан через .case-card, здесь менять не нужно */
+}
+
+[data-theme="dark"] .case-section .section-title {
+    color: var(--heading-color); /* Цвет заголовков внутри карточки */
+}
+
+[data-theme="dark"] .case-section .section-title:before {
+    background-color: var(--primary-color); /* Цвет линии перед заголовком */
+}
+
+[data-theme="dark"] .case-section p {
+    color: var(--text-color); /* Цвет текста параграфов */
+}
+
+[data-theme="dark"] .stat-item {
+    background-color: var(--secondary-background); /* Фон блока статистики */
+}
+
+[data-theme="dark"] .stat-item:hover {
+    background-color: rgba(61, 156, 255, 0.15); /* Фон при наведении */
+}
+
+[data-theme="dark"] .stat-value {
+    color: var(--primary-color); /* Цвет цифры статистики */
+}
+
+[data-theme="dark"] .stat-label {
+    color: var(--muted-color); /* Цвет подписи статистики */
+}
+
+[data-theme="dark"] .case-result {
+    background-color: rgba(61, 156, 255, 0.1); /* Фон блока результата */
+    border-left-color: var(--primary-color); /* Цвет линии слева */
+}
+
+[data-theme="dark"] .result-title {
+    color: var(--heading-color); /* Цвет заголовка результата */
+}
+
+[data-theme="dark"] .case-result p {
+    color: var(--text-color); /* Цвет текста результата */
+}
+
+/* Кнопки навигации и пагинация */
+[data-theme="dark"] .cases-prev,
+[data-theme="dark"] .cases-next {
+    background-color: var(--primary-color); /* Цвет фона кнопок */
+    /* color: white; - уже должен быть */
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+[data-theme="dark"] .cases-prev:hover,
+[data-theme="dark"] .cases-next:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+[data-theme="dark"] .swiper-pagination-bullet {
+    background-color: var(--primary-color); /* Цвет пагинации */
+    opacity: 0.4; /* Прозрачность неактивных точек */
+}
+
+[data-theme="dark"] .swiper-pagination-bullet-active {
+    opacity: 1; /* Непрозрачность активной точки */
+}
+
+/* Убираем излишнее перекрытие секций глобально */
+.recruitment-section + .faq,
+#professions + .faq,
+section + #faq {
+  margin-top: 0 !important; /* Убираем отрицательный отступ по умолчанию */
+}
+
+/* Стили для МОБИЛЬНЫХ устройств (экраны до 767px) */
+@media (max-width: 767px) {
+  #faq {
+    margin-top: 30px !important;  /* Добавляем положительный отступ СВЕРХУ для FAQ */
+    padding-top: 40px !important; /* Оставляем внутренний отступ сверху */
+  }
+
+  /* Уменьшаем нижний отступ у секции ПЕРЕД FAQ (#professions) */
+  #professions {
+    margin-bottom: 10px !important; /* Уменьшаем отступ СНИЗУ у предыдущей секции */
+    padding-bottom: 0 !important;
+  }
+
+  /* Можно также немного уменьшить стандартные отступы для всех секций на мобильных */
+  .section {
+     padding: 40px 0; /* [source: 1216] Уменьшенный отступ для мобильных */
+  }
+}
+
+/* Стили для ДЕСКТОПНЫХ устройств (экраны шире 767px) */
+@media (min-width: 768px) {
+   #faq {
+     /* Можно оставить стандартные отступы или добавить небольшой отрицательный, если нужно */
+     /* Например, чтобы немного приблизить, но не так сильно: */
+     /* margin-top: -30px !important; */
+     /* padding-top: 60px !important; /* Компенсирующий внутренний отступ */
+   }
+    #professions {
+        margin-bottom: 40px !important; /* Нижний отступ на десктопе */
+        padding-bottom: 0 !important;
+    }
+    .section {
+         padding: 60px 0; /* [source: 1213] Стандартный отступ для десктопа */
+     }
+}
+
+/* ===== Темная тема для секции Услуги ===== */
+[data-theme="dark"] #services .section-title h2 { /* Заголовок секции */
+    color: var(--heading-color);
+}
+
+[data-theme="dark"] #services .service-card h4,
+[data-theme="dark"] #services .service-hover-content h4 { /* Заголовки в карточке и при наведении */
+    color: var(--heading-color) !important; /* Добавим !important на всякий случай */
+}
+
+[data-theme="dark"] #services .service-card p,
+[data-theme="dark"] #services .service-features li { /* Описание и пункты списка */
+    color: var(--text-color) !important; /* Используем основной цвет текста */
+}
+
+/* [data-theme="dark"] #services .price-tag { */ /* Цена - можно оставить цвет темы или сделать светлее */
+    /* color: var(--primary-color); */ /* Оставить цвет темы */
+    /* color: #e0e0e0; */ /* Или сделать светло-серым */
+/* } */
+
+[data-theme="dark"] #services .service-features li i { /* Иконки-галочки */
+     color: var(--primary-color); /* Цвет иконок, как в светлой теме, но на темном фоне */
+}
+
+
+/* ===== Темная тема для секции Контакты ===== */
+[data-theme="dark"] #contact .section-title { /* Заголовок секции */
+    color: var(--heading-color);
+}
+
+[data-theme="dark"] #contact .section-subtitle { /* Подзаголовок секции */
+     color: var(--muted-color);
+}
+
+[data-theme="dark"] #contact .modern-contact-card { /* Общий текст внутри карточки, если наследование не сработало */
+     color: var(--text-color);
+ }
+
+[data-theme="dark"] #contact .modern-contact-card h4 { /* Заголовок в карточке */
+    color: var(--heading-color) !important;
+}
+
+[data-theme="dark"] #contact .modern-contact-card .contact-info { /* Текст email/telegram и т.д. */
+    color: var(--muted-color) !important;
+}
+
+[data-theme="dark"] #contact .php-email-form .form-control { /* Поля ввода формы */
+    color: var(--text-color);
+    background-color: var(--secondary-background); /* Фон поля ввода */
+    border-color: var(--border-color); /* Граница поля */
+}
+
+/* Убедимся, что и текст кнопки отправки тоже белый */
+[data-theme="dark"] #contact .send-button {
+     color: white;
+ }
