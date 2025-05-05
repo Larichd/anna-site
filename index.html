@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+    <head>
+<link rel="preload" href="assets/css/main.css" as="style">
+<style>
+    /* Базовые стили для быстрого отображения первого экрана */
+    body {margin: 0; font-family: 'Roboto', sans-serif;}
+    #preloader {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center;}
+    .loader-logo {display: inline-flex; font-size: 24px; font-weight: bold; color: #0078ff; background-color: rgba(0, 120, 255, 0.1); padding: 15px; border-radius: 50%;}
+    .header {position: fixed; width: 100%; z-index: 100; transition: all 0.3s ease;}
+    .hero-section {position: relative; height: 100vh; overflow: hidden;}
+    .hero-background, .hero-img {width: 100%; height: 100%; object-fit: cover;}
+</style>
+
+        <style>/* Принудительное исправление позиции фото на главном экране */.hero-background, .hero-background img, .hero-img, .parallax-bg { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: 55% 25% !important; transform: none !important;  /* Убираем трансформации, если они есть */ transition: none !important;  /* Отключаем переходы, которые могут мешать */ } /* Еще более сильное смещение для мобильных */@media (max-width: 767px) { .hero-background, .hero-background img, .hero-img, .parallax-bg {  object-position: 70% 20% !important; } } /* Максимальное смещение для очень маленьких экранов */@media (max-width: 480px) { .hero-background, .hero-background img, .hero-img, .parallax-bg {  object-position: 75% 20% !important; } } /* Стиль для кнопки мобильного меню */.btn-circle.menu-toggle, .mobile-nav-toggle, #mobile-toggle { background-color: #121212 !important; color: white !important; border: 1px solid rgba(255, 255, 255, 0.2) !important; } /* Иконка внутри кнопки */.btn-circle.menu-toggle i, .mobile-nav-toggle i, #mobile-toggle i { color: white !important; }</style>
+        <link as="style" href="assets/css/main.css" rel="preload"/>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <title>Анна Ларичева — Рекрутер и карьерный консультант</title>
+        <!-- Favicons -->
+        <link href="assets/img/favicon.png" rel="icon"/>
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+        <!-- Оптимизированная загрузка шрифтов -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+        <!-- Vendor CSS Files -->
+        <link href="bootstrap_theme/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet"/>
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+        <!-- Main CSS File -->
+        <link href="assets/css/main.css" rel="stylesheet"/>
+        <link href="assets/css/custom.css" rel="stylesheet"/>
+        <style>html[data-theme="dark"] .form-control::placeholder { color: #cccccc !important;  /* Светло-серый цвет */ opacity: 1 !important;  /* Убираем прозрачность */ } /* На всякий случай добавим и для префиксов с !important */html[data-theme="dark"] .form-control::-webkit-input-placeholder { color: #cccccc !important; opacity: 1 !important; } html[data-theme="dark"] .form-control::-moz-placeholder { /* Firefox 19+ */ color: #cccccc !important; opacity: 1 !important; } html[data-theme="dark"] .form-control:-ms-input-placeholder { /* IE 10+ */ color: #cccccc !important; opacity: 1 !important; } html[data-theme="dark"] .form-control::-ms-input-placeholder { /* Edge */ color: #cccccc !important; opacity: 1 !important; }</style>
+        <!-- Meta tags -->
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&amp;display=swap" rel="stylesheet"/>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+        <meta content="Анна Ларичева — профессиональный рекрутер, карьерный консультант и HR-эксперт. Помощь в поиске работы, подборе персонала и профессиональной ориентации." name="description"/>
+        <meta content="карьерный консультант, рекрутер, подбор персонала, резюме, профориентация, HR, Анна Ларичева, коучинг, карьерное развитие" name="keywords"/>
+        <meta content="Анна Ларичева — HR и карьерный консультант" property="og:title"/>
+        <meta content="Помогаю найти работу мечты, подготовить резюме и пройти собеседование." property="og:description"/>
+        <meta content="https://annlaricheva.github.io/assets/img/hero-img-optimized.webp" property="og:image"/>
+        <meta content="https://annlaricheva.github.io" property="og:url"/>
+        <meta content="website" property="og:type"/>
+        <meta content="index, follow" name="robots"/>
+        <!-- Темная тема -->
+    </head>
+    <body class="index-page">
+        <!-- Прелоадер -->
+        <div id="preloader">
+            <div class="loader-logo">
+                <span>AL</span>
+            </div>
+        </div>
+        <!-- Исправленная шапка сайта -->
+        <header class="header fixed-top" id="header">
+            <div class="container-fluid"> <a href="index.html" class="logo"> <span class="logo-text">Анна Ларичева</span> </a>
+                <nav id="main-nav" class="main-nav navmenu">
+                    <ul class="nav-list">
+                        <li><a href="#hero" class="nav-link active">Главная</a>
+                        </li>
+                        <li><a href="#about" class="nav-link">Обо мне</a>
+                        </li>
+                        <li><a href="#services" class="nav-link">Услуги</a>
+                        </li>
+                        <li><a href="#portfolio" class="nav-link">Благодарности</a>
+                        </li>
+                        <li><a href="#contact" class="nav-link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <button id="mobile-toggle" class="btn-circle menu-toggle mobile-nav-toggle">
+                        <i class="bi bi-list"></i> 
+                    </button>
+                    <button id="theme-toggle" class="btn-circle">
+                        <i class="bi bi-sun-fill sun-icon"></i>
+                        <i class="bi bi-moon-fill moon-icon"></i>
+                    </button>
+                    <a href="https://t.me/AnnLarich" class="btn-telegram" target="_blank"> <i class="bi bi-telegram"></i> <span class="btn-text">Задать вопрос</span> </a>
+                </div>
+            </div>             
+        </header>
+        <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+        <nav class="mobile-nav-panel" id="mobile-nav-panel">
+            <div class="mobile-nav-header">
+                <span class="mobile-nav-title">Меню</span>
+                <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Закрыть меню">&times;</button>
+            </div>
+            <ul class="mobile-nav-list">
+                <li><a href="#hero" class="mobile-nav-link">Главная</a>
+                </li>
+                <li><a href="#about" class="mobile-nav-link">Обо мне</a>
+                </li>
+                <li><a href="#services" class="mobile-nav-link">Услуги</a>
+                </li>
+                <li><a href="#portfolio" class="mobile-nav-link">Благодарности</a>
+                </li>
+                <li><a href="#contact" class="mobile-nav-link">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="main">
+            <main class="main">
+                <!-- Hero Section с разными изображениями для десктопа и мобильных устройств -->
+                <section class="hero section dark-background" id="hero">
+                    <div class="hero-background parallax-bg">
+                        <!-- Специальный элемент picture позволяет указать разные источники изображений -->
+                        <picture>
+                            <!-- Мобильное изображение (загружается для экранов до 767px) -->
+                            <source media="(max-width: 767px)" srcset="assets/img/mobile.webp">
+                            <!-- Десктопное изображение (по умолчанию) -->
+                            <img alt="Анна Ларичева" class="hero-img" loading="lazy" src="assets/img/hero-img-optimized.webp" width="1920" height="1080">
+                        </picture>
+                    </div>
+                    <div class="hero-content">
+                        <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+                            <h1 class="text-white">Анна Ларичева</h1>
+                            <p><span class="typed" data-typed-items="Рекрутер, Карьерный коуч, Фрилансер, HR-менеджер">Рекрутер</span></p>
+                            <div class="hero-buttons mt-4">
+                                <a href="#services" class="btn-main">Мои услуги</a>
+                                <a href="#contact" class="btn-outline">Связаться</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-scroll-hint">
+                        <a href="#about" class="scroll-down"> <i class="bi bi-arrow-down"></i> </a>
+                    </div>
+                </section>
+                <!-- About Section с улучшенной анимацией -->
+                <section class="about section" id="about">
+                    <div class="container text-center">
+                        <!-- Section Title with Centered Line -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <div class="section-title text-center mb-5" data-aos="fade-up">
+                                    <h2 class="fw-bold position-relative d-inline-block pb-3">Обо мне</h2>
+                                    <div class="highlight-line mx-auto mt-2"></div>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <!-- Image Column -->
+                            <div class="col-lg-5 mb-4 mb-lg-0">
+                                <div class="about-image-container" data-aos="fade-right" data-aos-duration="800">
+                                    <img src="image/ava1-optimized.jpeg" alt="Карьерный консультант" class="img-fluid rounded shadow" loading="lazy" width="600" height="800">
+                                    <div class="experience-badge" data-aos="fade-up" data-aos-delay="300">
+                                        <span class="years">14+</span>
+                                        <span class="text">лет опыта</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Content Column с карточкой навыков -->
+                            <div class="col-lg-7" data-aos="fade-left" data-aos-duration="800">
+                                <div class="about-content">
+                                    <div class="about-text">
+                                        <p class="lead text-center">
+  Я карьерный консультант и практикующий рекрутер с более чем<br/>
+  <strong>14-летним опытом в HR</strong> и <strong>7-летним опытом</strong> в карьерном консультировании.
+</p>
+                                        <div class="companies-worked">
+                                            <p class="mb-2">Сотрудничала с компаниями:</p>
+                                            <div class="company-logos">
+                                                <a href="https://www.vtb.ru/"><span class="company-tag">ВТБ</span></a>
+                                                <a href="https://tochka.com/"><span class="company-tag">Точка</span></a>
+                                                <a href="https://www.ikea.com/"><span class="company-tag">IKEA</span></a>
+                                                <a href="https://www.coca-cola.com/tj/ru"><span class="company-tag">Coca-Cola</span></a>
+                                                <a href="https://www.sephora.com/"><span class="company-tag">Sephora</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="about-details mt-4">
+                                           <p>Регулярно выступаю как приглашённый спикер в Технограде на ВДНХ, а также в университетах:
+МПГУ, Финансовый университет при Правительстве РФ, РГУ им. А. Н. Косыгина,
+и как эксперт в Университете Синергия.</p>
+                                            <p>Это дело всей моей жизни – помогать людям находить своё место. За годы практики я закрыла сотни вакансий в сферах IT, ритейла, маркетинга, финансов и др.</p>
+                                            <p>Успешно сопровождаю клиентов на всех этапах карьерного пути — от выбора профессии до выхода на работу мечты. Моя миссия — делать карьеру осознанной, а поиск работы — спокойным и результативным.</p>
+                                        </div>
+                                        <!-- Новый раздел: ключевые навыки -->
+                                        <div class="skills-section mt-4">
+</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Services Section с обновленными карточками -->
+<section class="services section" id="services">
+    <div class="container py-5">
+        <div class="container text-center"> 
+            <div class="section-title text-center mb-5">
+                <h2 class="section-title" style="text-align: center; width: 100%;">Услуги</h2>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Подбор персонала -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card h-100 rounded-4 position-relative overflow-hidden transition-all">
+                        <div class="service-content p-4 text-center">
+                            <div class="icon-container mb-4">
+                                <div class="icon-circle d-inline-flex align-items-center justify-content-center">
+                                    <i class="bi bi-person-badge fs-3"></i>
+                                </div>
+                            </div>
+                            <h4 class="mb-3">Подбор персонала</h4>
+                            <p class="mb-0 text-muted">Комплексный подбор сотрудников под задачи компании</p>
+                            <div class="price-tag mt-3">от 50000₽</div>
+                            <div class="service-action mt-3">
+                                <a href="recruitment.html" class="btn-service">Подробнее</a>
+                            </div>
+                        </div>
+                        <div class="service-hover-content">
+                            <h4>Подбор персонала</h4>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check2-circle"></i> Анализ потребностей компании
+                                </li>
+                                <li><i class="bi bi-check2-circle"></i> Поиск квалифицированных кандидатов
+                                </li>
+                                <li><i class="bi bi-check2-circle"></i> Проведение интервью
+                                </li>
+                                <li><i class="bi bi-check2-circle"></i> Проверка рекомендаций
+                                </li>
+                            </ul>
+                            <a href="recruitment.html" class="btn-service-alt">Узнать больше</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Карьерная консультация (переименованная из "Консультация по поиску работы") -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card h-100 rounded-4 position-relative overflow-hidden transition-all">
+                        <div class="service-content p-4 text-center">
+                            <div class="icon-container mb-4">
+                                <div class="icon-circle d-inline-flex align-items-center justify-content-center">
+                                    <i class="bi bi-chat-dots fs-3"></i>
+                                </div>
+                            </div>
+                            <h4 class="mb-3">Карьерная консультация</h4>
+                            <p class="mb-0 text-muted">Индивидуальные карьерные консультации</p>
+                            <div class="price-tag mt-3">от 6000₽</div>
+                            <div class="service-action mt-3">
+                                <a href="consulting.html" class="btn-service">Подробнее</a>
+                            </div>
+                        </div>
+                        <div class="service-hover-content">
+                            <h4>Карьерная консультация</h4>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check2-circle"></i> Анализ карьерного пути
+                                </li>
+                                <li><i class="bi bi-check2-circle"></i> Стратегия поиска работы
+                                </li>
+                                <li><i class="bi bi-check2-circle"></i> Подготовка к собеседованиям
+                                </li>
+                                <li><i class="bi bi-check2-circle"></i> Работа с мотивацией
+                                </li>
+                            </ul>
+                            <a href="consulting.html" class="btn-service-alt">Узнать больше</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Профориентация -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card h-100 rounded-4 position-relative overflow-hidden transition-all">
+                        <div class="service-content p-4 text-center">
+                            <div class="icon-container mb-4">
+                                <div class="icon-circle d-inline-flex align-items-center justify-content-center">
+                                    <i class="bi bi-compass fs-3"></i>
+                                </div>
+                            </div>
+                            <h4 class="mb-3">Профориентация</h4>
+                            <p class="mb-0 text-muted">Определение сильных сторон и выбор подходящей профессии</p>
+                            <div class="price-tag mt-3">от 8000₽</div>
+                            <div class="service-action mt-3">
+                                <a href="orientation.html" class="btn-service">Подробнее</a>
+                            </div>
+                        </div>
+                        <div class="service-hover-content">
+                            <h4>Профориентация</h4>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check2-circle"></i> Тестирование способностей
+                                </li>
+                                <li><i class="bi bi-check2-circle"></i> Анализ профессиональных интересов
+                                </li>
+                                <li><i class="bi bi-check2-circle"></i> Рекомендации по профессиям
+                                </li>
+                                <li><i class="bi bi-check2-circle"></i> План карьерного развития
+                                </li>
+                            </ul>
+                            <a href="orientation.html" class="btn-service-alt">Узнать больше</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 text-muted small">
+                <p>Цены указаны ориентировочно и могут изменяться в зависимости от конкретного запроса. Уточняйте стоимость при обращении.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Добавим дополнительные стили для лучшей адаптивности -->
+<style>
+/* Улучшенная адаптивность для карточек услуг */
+@media (max-width: 991px) {
+    .service-card {
+        margin-bottom: 20px;
+    }
+    .row.g-4.justify-content-center {
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .service-card {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Корректировка отступов для выравнивания при трех карточках */
+@media (min-width: 992px) {
+    .services .col-lg-4 {
+        flex: 0 0 auto;
+        width: 33.33333%;
+    }
+}
+
+/* Улучшенный эффект при наведении */
+.service-card:hover .service-content {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+</style>
+                <!-- Секция с фактами и анимированными счетчиками -->
+                <section class="stats section accent-background" id="stats">
+                    <img alt="" data-aos="fade-in" loading="lazy" src="assets/img/stats-bg.jpg"/>
+                    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+                        <div class="row gy-4">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="stats-item text-center w-100 h-100">
+                                    <div class="counter-container">
+                                        <span class="counter" data-count="700">0</span><span>+</span>
+                                    </div>
+                                    <p>Клиентов</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="stats-item text-center w-100 h-100">
+                                    <div class="counter-container">
+                                        <span class="counter" data-count="50">0</span><span>+</span>
+                                    </div>
+                                    <p>Проектов</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="stats-item text-center w-100 h-100">
+                                    <div class="counter-container">
+                                        <span class="counter" data-count="300">0</span><span>+</span>
+                                    </div>
+                                    <p>Вакансий</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="stats-item text-center w-100 h-100">
+                                    <div class="counter-container">
+                                        <span class="counter" data-count="12">0</span>
+                                    </div>
+                                    <p>Наград</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Секция кейсов с адаптивным слайдером -->
+                <section id="cases" class="cases-section">
+                    <div class="container">
+                        <!-- Заголовок секции -->
+                        <div class="container text-center"> 
+                            <div class="section-title text-center mb-5">
+                                <h2 class="section-title">Кейсы</h2>
+                                <p class="section-subtitle">Истории успешных проектов</p>
+                            </div>
+                            <!-- Слайдер для больших экранов (десктоп) -->
+                            <div class="cases-slider-container desktop-slider d-none d-lg-block">
+                                <div class="swiper cases-swiper-desktop">
+                                    <div class="swiper-wrapper">
+                                        <!-- Слайд 1: Первая пара кейсов для десктопа -->
+                                        <div class="swiper-slide">
+                                            <div class="row">
+                                                <!-- Кейс 1: Project Manager -->
+                                                <div class="col-lg-6">
+                                                    <div class="case-card h-100">
+                                                        <div class="case-header" style="background-color: #0078ff;">
+                                                            <h3 class="case-title">Project Manager</h3>
+                                                            <div class="case-tag">Карьерное консультирование</div>
+                                                        </div>
+                                                        <div class="case-content">
+                                                            <div class="case-section">
+                                                                <h4 class="section-title">Задача:</h4>
+                                                                <p>Помочь решить проблему с неудачными собеседованиями. Клиентка обратилась с отчаянием после 9 месяцев безуспешных поисков работы и более 60 интервью без результата.</p>
+                                                            </div>
+                                                            <div class="case-section">
+                                                                <h4 class="section-title">Что было сделано:</h4>
+                                                                <p>На консультации «Тест-драйв собеседования» были выявлены слабые стороны: неуверенная самопрезентация, расплывчатые ответы, волнение. Отрепетировали уверенные формулировки.</p>
+                                                            </div>
+                                                            <div class="case-result">
+                                                                <h4 class="result-title">Результат:</h4>
+                                                                <p>Через 3 недели кандидатка получила оффер от ведущей компании и приняла предложение.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Кейс 2: IT-компания -->
+                                                <div class="col-lg-6">
+                                                    <div class="case-card h-100">
+                                                        <div class="case-header" style="background-color: #584dc3;">
+                                                            <h3 class="case-title">IT-компания</h3>
+                                                            <div class="case-tag">Подбор Data Analyst</div>
+                                                        </div>
+                                                        <div class="case-content">
+                                                            <div class="case-section">
+                                                                <h4 class="section-title">Задача:</h4>
+                                                                <p>Подобрать аналитика с сильной экспертизой, несмотря на большой поток откликов от слабо релевантных кандидатов.</p>
+                                                            </div>
+                                                            <div class="case-section">
+                                                                <h4 class="section-title">Что было сделано:</h4>
+                                                                <p>Разработана многоступенчатая система отбора с техническим тестом и поведенческим интервью.</p>
+                                                                <div class="case-stats">
+                                                                    <div class="stat-item">
+                                                                        <div class="stat-value">96</div>
+                                                                        <div class="stat-label">кандидатов</div>
+                                                                    </div>
+                                                                    <div class="stat-item">
+                                                                        <div class="stat-value">12</div>
+                                                                        <div class="stat-label">тестирований</div>
+                                                                    </div>
+                                                                    <div class="stat-item">
+                                                                        <div class="stat-value">4</div>
+                                                                        <div class="stat-label">финалиста</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="case-result">
+                                                                <h4 class="result-title">Результат:</h4>
+                                                                <p>Через 4 недели найден соответствующий требованиям специалист.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Слайд 2: Вторая пара кейсов для десктопа -->
+                                        <div class="swiper-slide">
+                                            <div class="row">
+                                                <!-- Кейс 3: Экспресс-подбор -->
+                                                <div class="col-lg-6">
+                                                    <div class="case-card h-100">
+                                                        <div class="case-header" style="background-color: #3d9cff;">
+                                                            <h3 class="case-title">IT-компания</h3>
+                                                            <div class="case-tag">Экспресс-подбор</div>
+                                                        </div>
+                                                        <div class="case-content">
+                                                            <div class="case-section">
+                                                                <h4 class="section-title">Задача:</h4>
+                                                                <p>Закрыть позицию специалиста технической поддержки в течение недели. Вакансия появилась внезапно, на фоне роста нагрузки.</p>
+                                                            </div>
+                                                            <div class="case-section">
+                                                                <h4 class="section-title">Что было сделано:</h4>
+                                                                <p>Разработан ускоренный план найма с экспресс-скринингом и интервью в день отклика.</p>
+                                                                <div class="case-stats">
+                                                                    <div class="stat-item">
+                                                                        <div class="stat-value">42</div>
+                                                                        <div class="stat-label">кандидата</div>
+                                                                    </div>
+                                                                    <div class="stat-item">
+                                                                        <div class="stat-value">15</div>
+                                                                        <div class="stat-label">интервью</div>
+                                                                    </div>
+                                                                    <div class="stat-item">
+                                                                        <div class="stat-value">2</div>
+                                                                        <div class="stat-label">финалиста</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="case-result">
+                                                                <h4 class="result-title">Результат:</h4>
+                                                                <p>Уже через 7 дней новый специалист начал работу.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Кейс 4: Составление резюме -->
+                                                <div class="col-lg-6">
+                                                    <div class="case-card h-100">
+                                                        <div class="case-header" style="background-color: #00b894;">
+                                                            <h3 class="case-title">Бизнес-ассистент</h3>
+                                                            <div class="case-tag">Составление резюме</div>
+                                                        </div>
+                                                        <div class="case-content">
+                                                            <div class="case-section">
+                                                                <h4 class="section-title">Задача:</h4>
+                                                                <p>Решить проблему отсутствия откликов на резюме. Кандидатка испытывала трудности в поиске работы из-за возрастных стереотипов рекрутеров.</p>
+                                                            </div>
+                                                            <div class="case-section">
+                                                                <h4 class="section-title">Что было сделано:</h4>
+                                                                <p>Проведён аудит резюме, удалены возрастные маркеры, акценты смещены на цифровые навыки. Разработано индивидуальное сопроводительное письмо.</p>
+                                                            </div>
+                                                            <div class="case-result">
+                                                                <h4 class="result-title">Результат:</h4>
+                                                                <p>Через 5 недель клиентка вышла на новую работу с резким ростом количества откликов на резюме.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Слайд 3: Третья пара кейсов для десктопа -->
+                                        <div class="swiper-slide">
+                                            <div class="row">
+                                                <!-- Кейс 5: Архитектурное бюро -->
+                                                <div class="col-lg-6">
+                                                    <div class="case-card h-100">
+                                                        <div class="case-header" style="background-color: #e17055;">
+                                                            <h3 class="case-title">Архитектурное бюро</h3>
+                                                            <div class="case-tag">Подбор персонала</div>
+                                                        </div>
+                                                        <div class="case-content">
+                                                            <div class="case-section">
+                                                                <h4 class="section-title">Задача:</h4>
+                                                                <p>Найти специалиста на замену уволившегося сотрудника в сжатые сроки для грядущего проекта.</p>
+                                                            </div>
+                                                            <div class="case-section">
+                                                                <h4 class="section-title">Что было сделано:</h4>
+                                                                <p>Разработана стратегия с размещением вакансии на hh.ru, в Telegram-каналах и нетворкингом в сообществах.</p>
+                                                                <div class="case-stats">
+                                                                    <div class="stat-item">
+                                                                        <div class="stat-value">27</div>
+                                                                        <div class="stat-label">откликов</div>
+                                                                    </div>
+                                                                    <div class="stat-item">
+                                                                        <div class="stat-value">8</div>
+                                                                        <div class="stat-label">интервью</div>
+                                                                    </div>
+                                                                    <div class="stat-item">
+                                                                        <div class="stat-value">3</div>
+                                                                        <div class="stat-label">финалиста</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="case-result">
+                                                                <h4 class="result-title">Результат:</h4>
+                                                                <p>Через 3 недели кандидат успешно включился в работу над проектом без срыва дедлайнов.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Кейс 6: Новый пример -->
+                                                <div class="col-lg-6">
+                                                    <div class="case-card h-100">
+                                                        <div class="case-header" style="background-color: #6c5ce7;">
+                                                            <h3 class="case-title">Финансовая компания</h3>
+                                                            <div class="case-tag">Командный тренинг</div>
+                                                        </div>
+                                                        <div class="case-content">
+                                                            <div class="case-section">
+                                                                <h4 class="section-title">Задача:</h4>
+                                                                <p>Повысить эффективность работы отдела подбора персонала и устранить конфликты между сотрудниками.</p>
+                                                            </div>
+                                                            <div class="case-section">
+                                                                <h4 class="section-title">Что было сделано:</h4>
+                                                                <p>Проведена диагностика команды, серия тренингов по коммуникации и тренинг по работе со сложными кандидатами.</p>
+                                                            </div>
+                                                            <div class="case-result">
+                                                                <h4 class="result-title">Результат:</h4>
+                                                                <p>За 2 месяца производительность отдела выросла на 40%, текучесть снизилась вдвое, повысилась удовлетворенность работой.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Навигационные кнопки для десктопа -->
+                                <div class="cases-button-prev desktop-prev">
+                                    <i class="bi bi-chevron-left"></i>
+                                </div>
+                                <div class="cases-button-next desktop-next">
+                                    <i class="bi bi-chevron-right"></i>
+                                </div>
+                                <!-- Пагинация для десктопа -->
+                                <div class="cases-pagination desktop-pagination"></div>
+                            </div>
+                            <!-- Слайдер для средних и малых экранов (планшеты и мобильные) -->
+                            <div class="cases-slider-container mobile-slider d-block d-lg-none">
+                                <div class="swiper cases-swiper-mobile">
+                                    <div class="swiper-wrapper">
+                                        <!-- Кейс 1: Project Manager -->
+                                        <div class="swiper-slide">
+                                            <div class="case-card">
+                                                <div class="case-header" style="background-color: #0078ff;">
+                                                    <h3 class="case-title">Project Manager</h3>
+                                                    <div class="case-tag">Карьерное консультирование</div>
+                                                </div>
+                                                <div class="case-content">
+                                                    <div class="case-section">
+                                                        <h4 class="section-title">Задача:</h4>
+                                                        <p>Помочь решить проблему с неудачными собеседованиями. Клиентка обратилась с отчаянием после 9 месяцев безуспешных поисков работы и более 60 интервью без результата. Несмотря на хороший опыт, она не могла пройти финальные этапы собеседований.</p>
+                                                    </div>
+                                                    <div class="case-section">
+                                                        <h4 class="section-title">Что было сделано:</h4>
+                                                        <p>На консультации «Тест-драйв собеседования» были выявлены слабые стороны: неуверенная самопрезентация, расплывчатые ответы, волнение. Провели разбор ситуационных вопросов, отрепетировали уверенные формулировки. Подчёркнуты реальные достижения и переведены в язык цифр и конкретики.</p>
+                                                    </div>
+                                                    <div class="case-result">
+                                                        <h4 class="result-title">Результат:</h4>
+                                                        <p>Через 3 недели кандидатка получила оффер от ведущей компании и приняла предложение. Отзывы с новой работы подтверждают высокую эффективность её включения в команду и преодоление прежних трудностей.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Кейс 2: IT-компания -->
+                                        <div class="swiper-slide">
+                                            <div class="case-card">
+                                                <div class="case-header" style="background-color: #584dc3;">
+                                                    <h3 class="case-title">IT-компания</h3>
+                                                    <div class="case-tag">Подбор Data Analyst</div>
+                                                </div>
+                                                <div class="case-content">
+                                                    <div class="case-section">
+                                                        <h4 class="section-title">Задача:</h4>
+                                                        <p>Подобрать аналитика с сильной экспертизой, несмотря на большой поток откликов от слабо релевантных кандидатов. Требовался специалист с глубоким пониманием обработки данных и аналитического мышления.</p>
+                                                    </div>
+                                                    <div class="case-section">
+                                                        <h4 class="section-title">Что было сделано:</h4>
+                                                        <p>Была выстроена многоступенчатая система отбора: детализирован профиль кандидата, разработан этап технического теста и поведенческого интервью. Подготовлены вопросы, выявляющие как профессиональные навыки, так и способность к аналитическому мышлению и командной работе.</p>
+                                                        <div class="case-stats">
+                                                            <div class="stat-item">
+                                                                <div class="stat-value">96</div>
+                                                                <div class="stat-label">кандидатов рассмотрено</div>
+                                                            </div>
+                                                            <div class="stat-item">
+                                                                <div class="stat-value">12</div>
+                                                                <div class="stat-label">прошли тестирование</div>
+                                                            </div>
+                                                            <div class="stat-item">
+                                                                <div class="stat-value">4</div>
+                                                                <div class="stat-label">финальных интервью</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="case-result">
+                                                        <h4 class="result-title">Результат:</h4>
+                                                        <p>Через 4 недели найден специалист, полностью соответствующий требованиям. Он успешно адаптировался в коллективе и уже в первый месяц внедрил улучшения в отчётность компании.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Кейс 3: Экспресс-подбор -->
+                                        <div class="swiper-slide">
+                                            <div class="case-card">
+                                                <div class="case-header" style="background-color: #3d9cff;">
+                                                    <h3 class="case-title">IT-компания</h3>
+                                                    <div class="case-tag">Экспресс-подбор</div>
+                                                </div>
+                                                <div class="case-content">
+                                                    <div class="case-section">
+                                                        <h4 class="section-title">Задача:</h4>
+                                                        <p>Закрыть позицию специалиста технической поддержки в течение недели. Вакансия появилась внезапно, на фоне роста нагрузки. Необходимо было найти «боевого» специалиста с готовностью сразу включиться в задачи.</p>
+                                                    </div>
+                                                    <div class="case-section">
+                                                        <h4 class="section-title">Что было сделано:</h4>
+                                                        <p>Разработан ускоренный план найма: активированы быстрые каналы поиска, проведён экспресс-скрининг и интервью в день отклика. Даны рекомендации работодателю по адаптации нового сотрудника, чтобы он быстрее вошёл в курс дела.</p>
+                                                        <div class="case-stats">
+                                                            <div class="stat-item">
+                                                                <div class="stat-value">42</div>
+                                                                <div class="stat-label">кандидата за 3 дня</div>
+                                                            </div>
+                                                            <div class="stat-item">
+                                                                <div class="stat-value">15</div>
+                                                                <div class="stat-label">быстрых интервью</div>
+                                                            </div>
+                                                            <div class="stat-item">
+                                                                <div class="stat-value">2</div>
+                                                                <div class="stat-label">финальных кандидата</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="case-result">
+                                                        <h4 class="result-title">Результат:</h4>
+                                                        <p>Уже через 7 дней новый специалист начал работу. Отдел избежал срыва сроков и перегрузки команды. Руководитель отметил высокую эффективность процесса найма.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Кейс 4: Составление резюме -->
+                                        <div class="swiper-slide">
+                                            <div class="case-card">
+                                                <div class="case-header" style="background-color: #00b894;">
+                                                    <h3 class="case-title">Бизнес-ассистент</h3>
+                                                    <div class="case-tag">Составление резюме</div>
+                                                </div>
+                                                <div class="case-content">
+                                                    <div class="case-section">
+                                                        <h4 class="section-title">Задача:</h4>
+                                                        <p>Решить проблему отсутствия откликов на резюме. Кандидатка столкнулась с тем, что отправляла десятки откликов безрезультатно и испытывала трудности в поиске работы, в том числе из-за возрастных стереотипов рекрутеров.</p>
+                                                    </div>
+                                                    <div class="case-section">
+                                                        <h4 class="section-title">Что было сделано:</h4>
+                                                        <p>Проведён аудит резюме. Были удалены возрастные маркеры, обновлена фотография, акценты смещены на цифровые навыки и достижения. Резюме структурировано под современные стандарты. Дополнительно разработано индивидуальное сопроводительное письмо, усиливающее мотивационную часть.</p>
+                                                    </div>
+                                                    <div class="case-result">
+                                                        <h4 class="result-title">Результат:</h4>
+                                                        <p>Через 5 недель клиентка вышла на новую работу. Она отметила резкий рост количества откликов сразу после редизайна резюме и улучшение качества предложений от работодателей.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Кейс 5: Архитектурное бюро -->
+                                        <div class="swiper-slide">
+                                            <div class="case-card">
+                                                <div class="case-header" style="background-color: #e17055;">
+                                                    <h3 class="case-title">Архитектурное бюро</h3>
+                                                    <div class="case-tag">Подбор персонала</div>
+                                                </div>
+                                                <div class="case-content">
+                                                    <div class="case-section">
+                                                        <h4 class="section-title">Задача:</h4>
+                                                        <p>Найти специалиста на замену уволившегося сотрудника в сжатые сроки. Компания обратилась с задачей срочно закрыть вакансию после неожиданного ухода сотрудника. Сроки поджимали, так как грядущий проект требовал немедленного включения нового специалиста.</p>
+                                                    </div>
+                                                    <div class="case-section">
+                                                        <h4 class="section-title">Что было сделано:</h4>
+                                                        <p>Была оперативно разработана стратегия поиска: размещена вакансия на hh.ru, подключены профильные Telegram-каналы и нетворкинг в профессиональных сообществах. Проведён скрининг, телефонные и очные интервью с кандидатами.</p>
+                                                        <div class="case-stats">
+                                                            <div class="stat-item">
+                                                                <div class="stat-value">27</div>
+                                                                <div class="stat-label">релевантных откликов</div>
+                                                            </div>
+                                                            <div class="stat-item">
+                                                                <div class="stat-value">8</div>
+                                                                <div class="stat-label">интервью</div>
+                                                            </div>
+                                                            <div class="stat-item">
+                                                                <div class="stat-value">3</div>
+                                                                <div class="stat-label">финалиста</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="case-result">
+                                                        <h4 class="result-title">Результат:</h4>
+                                                        <p>Через 3 недели кандидат успешно прошёл испытательный срок и включился в работу над проектом. Компания сохранила темп реализации задач без срыва дедлайнов.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Кейс 6: Новый пример -->
+                                        <div class="swiper-slide">
+                                            <div class="case-card">
+                                                <div class="case-header" style="background-color: #6c5ce7;">
+                                                    <h3 class="case-title">Финансовая компания</h3>
+                                                    <div class="case-tag">Командный тренинг</div>
+                                                </div>
+                                                <div class="case-content">
+                                                    <div class="case-section">
+                                                        <h4 class="section-title">Задача:</h4>
+                                                        <p>Повысить эффективность работы отдела подбора персонала и устранить конфликты между сотрудниками. Руководитель отметил снижение результативности и ухудшение атмосферы в команде.</p>
+                                                    </div>
+                                                    <div class="case-section">
+                                                        <h4 class="section-title">Что было сделано:</h4>
+                                                        <p>Проведена диагностика команды, выявлены основные точки напряжения. Разработана и реализована серия тренингов по эффективной коммуникации и командному взаимодействию. Дополнительно проведён мастер-класс по работе со сложными кандидатами.</p>
+                                                    </div>
+                                                    <div class="case-result">
+                                                        <h4 class="result-title">Результат:</h4>
+                                                        <p>За 2 месяца производительность отдела выросла на 40%, текучесть снизилась вдвое, повысилась удовлетворенность работой. Команда смогла выстроить эффективные процессы и наладить конструктивное взаимодействие.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Навигационные кнопки для мобильного -->
+                                <div class="cases-button-prev mobile-prev">
+                                    <i class="bi bi-chevron-left"></i>
+                                </div>
+                                <div class="cases-button-next mobile-next">
+                                    <i class="bi bi-chevron-right"></i>
+                                </div>
+                                <!-- Пагинация для мобильного -->
+                                <div class="cases-pagination mobile-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Стили для адаптивного слайдера кейсов -->
+                <style>/* Стили для секции кейсов */.cases-section { padding: 80px 0; background-color: #f8f9fa; position: relative; } /* Стили для заголовка секции */.section-header { margin-bottom: 50px; } .section-title { font-size: 36px; font-weight: 700; margin-bottom: 15px; color: #333; position: relative; display: inline-block; } .section-divider { width: 80px; height: 3px; background-color: #0078ff; margin: 0 auto 20px; } .section-subtitle { font-size: 18px; color: #6c757d; } /* Контейнер для слайдера кейсов */.cases-slider-container { position: relative; margin: 0 auto; max-width: 1200px; padding: 0 120px;  /* Увеличенный отступ для размещения кнопок */ } /* Стили для карточки кейса */.case-card { background-color: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); transition: transform 0.4s ease, box-shadow 0.4s ease; height: 100%; margin-bottom: 20px;  /* Отступ между карточками */ } .case-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); } /* Заголовок кейса */.case-header { color: white; padding: 25px 30px; position: relative; } .case-title { font-size: 24px; font-weight: 600; margin: 0; margin-bottom: 5px; color: white; } .case-tag { display: inline-block; background-color: rgba(255, 255, 255, 0.2); padding: 5px 12px; border-radius: 30px; font-size: 14px; font-weight: 500; } /* Содержимое кейса */.case-content { padding: 30px; } .case-section { margin-bottom: 25px; } .case-section .section-title { font-size: 18px; font-weight: 600; color: #333; margin-bottom: 10px; display: flex; align-items: center; } .case-section .section-title:before { content: ""; width: 20px; height: 2px; background-color: #0078ff; margin-right: 10px; display: inline-block; } .case-section p { color: #6c757d; margin-bottom: 15px; line-height: 1.6; } /* Статистика */.case-stats { display: flex; justify-content: space-between; margin-top: 20px; flex-wrap: wrap; gap: 10px; } .stat-item { flex: 1; min-width: 80px; background-color: #f8f9fa; border-radius: 10px; padding: 12px 8px; text-align: center; transition: all 0.3s ease; } .stat-item:hover { transform: translateY(-5px); background-color: rgba(0, 120, 255, 0.1); } .stat-value { font-size: 24px; font-weight: 700; color: #0078ff; margin-bottom: 5px; } .stat-label { font-size: 13px; color: #6c757d; } /* Блок результата */.case-result { background-color: rgba(0, 120, 255, 0.05); border-left: 3px solid #0078ff; padding: 20px; border-radius: 0 10px 10px 0; } .result-title { font-size: 18px; font-weight: 600; color: #333; margin-bottom: 10px; } .case-result p { margin-bottom: 0; } /* ===== УЛУЧШЕННЫЕ КНОПКИ НАВИГАЦИИ ===== */.cases-button-prev, .cases-button-next { position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; background-color: #0078ff; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 5px 15px rgba(0, 0, 120, 0.2); transition: all 0.3s ease; z-index: 10; } .cases-button-prev { left: 20px;  /* Отступ слева для кнопки "Назад" */ } .cases-button-next { right: 20px;  /* Отступ справа для кнопки "Вперед" */ } .cases-button-prev:hover, .cases-button-next:hover { background-color: #0069d9; transform: translateY(-50%) scale(1.1); } .cases-button-prev i, .cases-button-next i { font-size: 24px; } /* Стили для пагинации */.cases-pagination { position: relative; text-align: center; margin-top: 30px; } .swiper-pagination-bullet { width: 12px; height: 12px; background-color: #0078ff; opacity: 0.5; transition: all 0.3s ease; } .swiper-pagination-bullet-active { opacity: 1; width: 30px; border-radius: 6px; } /* Дополнительный стиль для выравнивания карточек в ряду */.swiper-slide .row { margin-right: -10px; margin-left: -10px; } .swiper-slide .row > div { padding-right: 10px; padding-left: 10px; } /* Медиа-запросы для адаптивности */@media (max-width: 991px) { .cases-section {  padding: 60px 0; }  .section-title {  font-size: 30px; }  .case-header {  padding: 20px 25px; }  .case-title {  font-size: 22px; }  .case-content {  padding: 25px; }  .cases-slider-container {  padding: 0 100px;   /* Уменьшаем отступы для планшетов */ } } @media (max-width: 767px) { .cases-slider-container {  padding: 0 80px;   /* Уменьшаем отступы для мобильных устройств */ }  .cases-button-prev, .cases-button-next {  width: 40px;  height: 40px; }  .cases-button-prev {  left: 15px;   /* Смещаем кнопку ближе на мобильных */ }  .cases-button-next {  right: 15px;   /* Смещаем кнопку ближе на мобильных */ }  .cases-button-prev i, .cases-button-next i {  font-size: 20px; }  .section-title {  font-size: 26px; }  .section-subtitle {  font-size: 16px; }  .case-stats {  flex-direction: row; }  .stat-item {  margin-bottom: 10px; } } @media (max-width: 480px) { .cases-slider-container {  padding: 0 60px;   /* Еще меньше отступы для очень маленьких экранов */ }  .cases-button-prev, .cases-button-next {  width: 36px;  height: 36px; }  .cases-button-prev {  left: 10px; }  .cases-button-next {  right: 10px; }  .cases-button-prev i, .cases-button-next i {  font-size: 18px; }  .case-header {  padding: 15px 20px; }  .case-title {  font-size: 18px; }  .case-content {  padding: 15px; }  .case-section .section-title {  font-size: 16px; }  .stat-value {  font-size: 22px; } }</style>
+                <!-- Скрипт для инициализации слайдеров кейсов без автопрокрутки -->
+                <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Инициализация слайдера для десктопа (двухколоночный)
+    new Swiper('.cases-swiper-desktop', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoHeight: true, // Адаптирует высоту под каждый слайд
+        // Без автопрокрутки
+        pagination: {
+            el: '.desktop-pagination',
+            clickable: true,
+            dynamicBullets: true
+        },
+        navigation: {
+            nextEl: '.desktop-next',
+            prevEl: '.desktop-prev',
+        },
+        on: {
+            init: function() {
+                console.log('Desktop cases slider initialized successfully');
+            }
+        }
+    });
+    
+    // Инициализация слайдера для мобильного (одноколоночный)
+    new Swiper('.cases-swiper-mobile', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoHeight: true, // Важно для адаптивной высоты
+        // Без автопрокрутки
+        pagination: {
+            el: '.mobile-pagination',
+            clickable: true,
+            dynamicBullets: true
+        },
+        navigation: {
+            nextEl: '.mobile-next',
+            prevEl: '.mobile-prev',
+        },
+        on: {
+            init: function() {
+                console.log('Mobile cases slider initialized successfully');
+            }
+        }
+    });
+});
+</script>
+                <!-- Portfolio/Certificates Section с анимированной галереей -->
+                <section class="certificates section" id="portfolio">
+                    <div class="container py-5">
+                        <div class="container text-center"> 
+                            <div class="section-title text-center mb-5">
+                                <h2 class="fw-bold position-relative d-inline-block pb-3">Благодарности</h2>
+                                <p class="text-muted mt-3">Дипломы, сертификаты и благодарственные письма</p>
+                            </div>
+                            <!-- Фильтры для галереи -->
+                            <div class="certificates-filters text-center mb-4">
+                                <ul class="d-inline-flex list-unstyled gap-3 filter-menu">
+                                    <li class="active" data-filter="all">Все</li>
+                                    <li data-filter="letters">Благодарственные письма</li>
+                                    <li data-filter="diplomas">Дипломы</li>
+                                    <li data-filter="certificates">Сертификаты</li>
+                                </ul>
+                            </div>
+                            <div class="certificate-gallery">
+                                <div class="row g-4">
+                                    <!-- Сертификат 1 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="certificate-card position-relative overflow-hidden rounded-4 shadow-sm" data-category="certificates">
+                                            <div class="certificate-img">
+                                                <img src="assets/img/portfolio/app-1.jpg" alt="Сертификат" class="img-fluid w-100">
+                                                <div class="certificate-overlay">
+                                                    <a href="assets/img/portfolio/app-1.jpg" class="glightbox" data-gallery="certificates-gallery"> <i class="bi bi-fullscreen"></i> </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Сертификат 2 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="certificate-card position-relative overflow-hidden rounded-4 shadow-sm" data-category="diplomas">
+                                            <div class="certificate-img">
+                                                <img src="assets/img/portfolio/product-1.jpg" alt="Сертификат" class="img-fluid w-100">
+                                                <div class="certificate-overlay">
+                                                    <a href="assets/img/portfolio/product-1.jpg" class="glightbox" data-gallery="certificates-gallery"> <i class="bi bi-fullscreen"></i> </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Сертификат 3 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="certificate-card position-relative overflow-hidden rounded-4 shadow-sm" data-category="letters">
+                                            <div class="certificate-img">
+                                                <img src="assets/img/portfolio/branding-1.jpg" alt="Сертификат" class="img-fluid w-100">
+                                                <div class="certificate-overlay">
+                                                    <a href="assets/img/portfolio/branding-1.jpg" class="glightbox" data-gallery="certificates-gallery"> <i class="bi bi-fullscreen"></i> </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Сертификат 4 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="certificate-card position-relative overflow-hidden rounded-4 shadow-sm" data-category="certificates">
+                                            <div class="certificate-img">
+                                                <img src="assets/img/portfolio/books-1.jpg" alt="Сертификат" class="img-fluid w-100">
+                                                <div class="certificate-overlay">
+                                                    <a href="assets/img/portfolio/books-1.jpg" class="glightbox" data-gallery="certificates-gallery"> <i class="bi bi-fullscreen"></i> </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Сертификат 5 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="certificate-card position-relative overflow-hidden rounded-4 shadow-sm" data-category="diplomas">
+                                            <div class="certificate-img">
+                                                <img src="assets/img/portfolio/app-2.jpg" alt="Сертификат" class="img-fluid w-100">
+                                                <div class="certificate-overlay">
+                                                    <a href="assets/img/portfolio/app-2.jpg" class="glightbox" data-gallery="certificates-gallery"> <i class="bi bi-fullscreen"></i> </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Сертификат 6 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="certificate-card position-relative overflow-hidden rounded-4 shadow-sm" data-category="letters">
+                                            <div class="certificate-img">
+                                                <img src="assets/img/portfolio/product-2.jpg" alt="Сертификат" class="img-fluid w-100">
+                                                <div class="certificate-overlay">
+                                                    <a href="assets/img/portfolio/product-2.jpg" class="glightbox" data-gallery="certificates-gallery"> <i class="bi bi-fullscreen"></i> </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Сертификат 7 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="certificate-card position-relative overflow-hidden rounded-4 shadow-sm" data-category="certificates">
+                                            <div class="certificate-img">
+                                                <img src="assets/img/portfolio/branding-2.jpg" alt="Сертификат" class="img-fluid w-100">
+                                                <div class="certificate-overlay">
+                                                    <a href="assets/img/portfolio/branding-2.jpg" class="glightbox" data-gallery="certificates-gallery"> <i class="bi bi-fullscreen"></i> </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Сертификат 8 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="certificate-card position-relative overflow-hidden rounded-4 shadow-sm" data-category="diplomas">
+                                            <div class="certificate-img">
+                                                <img src="assets/img/portfolio/books-2.jpg" alt="Сертификат" class="img-fluid w-100">
+                                                <div class="certificate-overlay">
+                                                    <a href="assets/img/portfolio/books-2.jpg" class="glightbox" data-gallery="certificates-gallery"> <i class="bi bi-fullscreen"></i> </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Сертификат 9 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="certificate-card position-relative overflow-hidden rounded-4 shadow-sm" data-category="letters">
+                                            <div class="certificate-img">
+                                                <img src="assets/img/portfolio/app-3.jpg" alt="Сертификат" class="img-fluid w-100">
+                                                <div class="certificate-overlay">
+                                                    <a href="assets/img/portfolio/app-3.jpg" class="glightbox" data-gallery="certificates-gallery"> <i class="bi bi-fullscreen"></i> </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                
+                <!-- Блок из 1.txt - Список профессий -->
+                <section id="professions">
+                    <div class="recruitment-section">
+                        <div class="info-section">
+                            <h2 class="section-title-prof">В моём арсенале</h2>
+                            <h3 class="resume-count">более 1 500 резюме</h3>
+                            <p class="info-text">Быстро и качественно закрою любую вакансию в разных отраслях.
+Вы будете выбирать из сильнейших кандидатов, а не из тех, кто просто откликнулся.</p>
+                            <div class="feature-item">
+                                <i>■</i>
+                                <div>
+                                    <h4 class="feature-title">Уникальные специалисты</h4>
+                                    <p class="feature-desc">Нахожу редких и ценных профессионалов с узкой специализацией для нестандартных задач.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i>■</i>
+                                <div>
+                                    <h4 class="feature-title">Офисный персонал, ИТР</h4>
+                                    <p class="feature-desc">Подбираю бухгалтеров, менеджеров, инженеров, аналитиков и административный персонал.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i>■</i>
+                                <div>
+                                    <h4 class="feature-title">Линейный персонал</h4>
+                                    <p class="feature-desc">Организую подбор продавцов, кладовщиков, операторов, сборщиков и других сотрудников первых линий.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i>■</i>
+                                <div>
+                                    <h4 class="feature-title">Топ-менеджмент и руководители отделов</h4>
+                                    <p class="feature-desc">Провожу комплексный подбор управленцев, руководителей отделов и директоров с высоким уровнем компетенций.</p>
+                                </div>
+                            </div>
+                            <a href="https://t.me/AnnLarich" class="cta-button" target="_blank">Подобрать сотрудника</a>
+                        </div>
+                        <div class="cards-section">
+                            <div class="resume-list">
+                                <!-- Карточки для бесконечного скролла -->
+                                <div class="cards-section">
+                                    <div class="resume-list-animated-wrapper"> 
+                                        <div class="resume-list-inner"> 
+                                            <div class="resume-card">
+                                                <img src="assets/img/res/hr_specialist_male_70x70.png" class="resume-image" alt="HR специалист"/>
+                                                <div class="resume-details">
+                                                    <h4 class="resume-title">HR-специалист</h4>
+                                                    <p class="resume-desc">Подбор персонала и адаптация сотрудников</p>
+                                                </div>
+                                            </div>
+                                            <div class="resume-card">
+                                                <img src="assets/img/res/data_analyst_70x70.png" alt="Многопрофильный мастер" class="resume-image"/>
+                                                <div class="resume-details">
+                                                    <h4 class="resume-title">Многопрофильный мастер</h4>
+                                                    <p class="resume-desc">Сбор, обработка и визуализация данных для бизнеса</p>
+                                                </div>
+                                            </div>
+                                            <div class="resume-card">
+                                                <img src="assets/img/res/menedzher_bytovaya_tehnika_70x70.png" alt="Менеджер" class="resume-image"/>
+                                                <div class="resume-details">
+                                                    <h4 class="resume-title">Менеджер</h4>
+                                                    <p class="resume-desc">Продажа бытовой техники</p>
+                                                </div>
+                                            </div>
+                                            <div class="resume-card">
+                                                <img src="assets/img/res/marketolog_stok_70x70.png" alt="Маркетолог" class="resume-image"/>
+                                                <div class="resume-details">
+                                                    <h4 class="resume-title">Маркетолог</h4>
+                                                    <p class="resume-desc">Продвижение продуктов и услуг</p>
+                                                </div>
+                                            </div>
+                                            <div class="resume-card">
+                                                <img src="assets/img/res/bukhgalter_outsource_70x70.png" alt="Бухгалтер на аутсорсе" class="resume-image"/>
+                                                <div class="resume-details">
+                                                    <h4 class="resume-title">Бухгалтер на аутсорсе</h4>
+                                                    <p class="resume-desc">Помощь с бухгалтерскими и налоговыми декларациями</p>
+                                                </div>
+                                            </div>
+                                            <div class="resume-card">
+                                                <img src="assets/img/res/finansovyi_direktor_70x70.png" alt="Финансовый директор" class="resume-image"/>
+                                                <div class="resume-details">
+                                                    <h4 class="resume-title">Финансовый директор</h4>
+                                                    <p class="resume-desc">Определение финансовых потоков предприятия</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="resume-list-inner"> 
+                                            <div class="resume-card">
+                                                <img src="assets/img/res/marketing_strateg_70x70.png" class="resume-image" alt="Экономист"/>
+                                                <div class="resume-details">
+                                                    <h4 class="resume-title">Экономист</h4>
+                                                    <p class="resume-desc">Анализ расходов, прибыли и финансовых прогнозов</p>
+                                                </div>
+                                            </div>
+                                            <div class="resume-card">
+                                                <img src="assets/img/res/data_analyst_70x70.png" alt="Дата аналитик" class="resume-image"/>
+                                                <div class="resume-details">
+                                                    <h4 class="resume-title">Дата аналитик</h4>
+                                                    <p class="resume-desc">Сбор, обработка и визуализация данных для бизнеса</p>
+                                                </div>
+                                            </div>
+                                            <div class="resume-card">
+                                                <img src="assets/img/res/menedzher_bytovaya_tehnika_70x70.png" alt="Менеджер" class="resume-image"/>
+                                                <div class="resume-details">
+                                                    <h4 class="resume-title">Менеджер</h4>
+                                                    <p class="resume-desc">Продажа бытовой техники</p>
+                                                </div>
+                                            </div>
+                                            <div class="resume-card">
+                                                <img src="assets/img/res/marketolog_stok_70x70.png" alt="Маркетолог" class="resume-image"/>
+                                                <div class="resume-details">
+                                                    <h4 class="resume-title">Маркетолог</h4>
+                                                    <p class="resume-desc">Продвижение продуктов и услуг</p>
+                                                </div>
+                                            </div>
+                                            <div class="resume-card">
+                                                <img src="assets/img/res/bukhgalter_outsource_70x70.png" alt="Бухгалтер на аутсорсе" class="resume-image"/>
+                                                <div class="resume-details">
+                                                    <h4 class="resume-title">Бухгалтер на аутсорсе</h4>
+                                                    <p class="resume-desc">Помощь с бухгалтерскими и налоговыми декларациями</p>
+                                                </div>
+                                            </div>
+                                            <div class="resume-card">
+                                                <img src="assets/img/res/finansovyi_direktor_70x70.png" alt="Финансовый директор" class="resume-image"/>
+                                                <div class="resume-details">
+                                                    <h4 class="resume-title">Финансовый директор</h4>
+                                                    <p class="resume-desc">Определение финансовых потоков предприятия</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                </section>
+                <!-- Секция FAQ в улучшенном минималистичном стиле -->
+<section class="faq section" id="faq">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h3 class="faq-title">Часто задаваемые</h3>
+                <h2 class="faq-subtitle">ВОПРОСЫ</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="faq-accordion">
+                    <!-- Вопрос 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer1" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <span class="faq-number">1.</span>
+                                <span class="faq-text">Помогаете ли вы с составлением резюме и сопроводительного письма?</span>
+                            </div>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div id="faqAnswer1" class="collapse faq-answer">
+                            <p>Да, я помогаю составить эффективное резюме и сопроводительное письмо, адаптированное под конкретные вакансии и требования.</p>
+                        </div>
+                    </div>
+                    <!-- Вопрос 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer2" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <span class="faq-number">2.</span>
+                                <span class="faq-text">Можно ли получить индивидуальную консультацию по поиску работы?</span>
+                            </div>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div id="faqAnswer2" class="collapse faq-answer">
+                            <p>Конечно! Индивидуальные консультации — один из ключевых форматов работы. На консультации мы разберем именно вашу ситуацию, цели и ресурсы.</p>
+                        </div>
+                    </div>
+                    <!-- Вопрос 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer3" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <span class="faq-number">3.</span>
+                                <span class="faq-text">Как проходит профориентация?</span>
+                            </div>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div id="faqAnswer3" class="collapse faq-answer">
+                            <p>Профориентация включает прохождения двух тестирований, коуч-сессия о ваших интересах, ценностях и сильных сторонах, а также анализ подходящих сфер и направлений развития.</p>
+                        </div>
+                    </div>
+                    <!-- Вопрос 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer4" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <span class="faq-number">4.</span>
+                                <span class="faq-text">Только начинаю поиск работы. Лучше обратиться сейчас или стоит попробовать поискать самостоятельно?</span>
+                            </div>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div id="faqAnswer4" class="collapse faq-answer">
+                            <p>Лучше обратиться сейчас. Мы поможем выстроить стратегию, чтобы избежать ошибок на старте и быстрее выйти на желаемую работу.</p>
+                        </div>
+                    </div>
+                    <!-- Вопрос 5 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer5" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <span class="faq-number">5.</span>
+                                <span class="faq-text">Как проходит подготовка к собеседованию?</span>
+                            </div>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div id="faqAnswer5" class="collapse faq-answer">
+                            <p>Мы разбираем формат интервью, возможные вопросы, тренируем уверенные ответы, а также работаем с волнением и невербальным поведением.</p>
+                        </div>
+                    </div>
+                    <!-- Вопрос 6 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer6" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <span class="faq-number">6.</span>
+                                <span class="faq-text">В каких компаниях работали?</span>
+                            </div>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div id="faqAnswer6" class="collapse faq-answer">
+                            <p>Я работала с кандидатами и компаниями из разных сфер — от IT и маркетинга до образования, сервиса и производственных предприятий. Подробности можно обсудить на консультации.</p>
+                        </div>
+                    </div>
+                    <!-- Вопрос 7 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer7" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <span class="faq-number">7.</span>
+                                <span class="faq-text">Сколько обычно занимает времени подбор персонала?</span>
+                            </div>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div id="faqAnswer7" class="collapse faq-answer">
+                            <p>В зависимости от уровня позиции, в среднем — от 1 до 4 недель. В экстренных случаях — быстрее. Мы адаптируем сроки под задачу.</p>
+                        </div>
+                    </div>
+                    <!-- Вопрос 8 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer8" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <span class="faq-number">8.</span>
+                                <span class="faq-text">Вы специализируетесь на конкретных вакансиях?</span>
+                            </div>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div id="faqAnswer8" class="collapse faq-answer">
+                            <p>Я работаю с широким спектром вакансий — от начального до руководящего уровня, а также помогаю с карьерным переходом и сменой профессии.</p>
+                        </div>
+                    </div>
+                    <!-- Вопрос 9 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer9" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <span class="faq-number">9.</span>
+                                <span class="faq-text">Есть ли у вас бесплатные услуги?</span>
+                            </div>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div id="faqAnswer9" class="collapse faq-answer">
+                            <p>Да, у нас есть бесплатные материалы, мини-гайды и открытые вебинары. Иногда провожу бесплатные экспресс-консультации — следите за новостями. Так же вы можете отправить свое резюме/вакансию на электронную почту.</p>
+                        </div>
+                    </div>
+                    <!-- Вопрос 10 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer10" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <span class="faq-number">10.</span>
+                                <span class="faq-text">Мне нужна быстрая консультация, есть у вас такой формат?</span>
+                            </div>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div id="faqAnswer10" class="collapse faq-answer">
+                            <p>Да, есть формат экспресс-консультации до 30 минут или коммуникации в мессенджере. Пишите на оставленные ниже контакты.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                <!-- Исправленная секция отзывов с правильным отображением -->
+                <section class="testimonials-section" id="testimonials">
+                    <div class="testimonials-container">
+                        <div class="testimonials-header text-center">
+                            <h2>Отзывы</h2>
+                            <div class="divider"></div>
+                            <p>Что говорят мои клиенты</p>
+                        </div>
+                        <div class="testimonial-slider">
+                            <!-- Слайдер отзывов -->
+                            <div class="swiper testimonialSwiper">
+                                <div class="swiper-wrapper">
+                                    <!-- Отзыв 1: Лилия -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card">
+                                            <h3 class="client-name">Лилия</h3>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                            <blockquote>
+                                                <p>По итогу консультации по профсамоопределению получила 3 варианта карьерного развития. Есть над чем подумать. Было полезно для меня, так как даже не знала о таком профессиональном направлении. Встреча была очень комфортной и лёгкой. Спасибо))</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <!-- Отзыв 2: Олеся Есина -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card">
+                                            <h3 class="client-name">Олеся Есина</h3>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                            <blockquote>
+                                                <p>Анна, спасибо большое за проведённую сессию! За одну встречу проговорили и про профессиональное выгорание, и проработали самоопределение, и составили карьерные треки, и проработали резюме. Действительно вижу пользу для себя в этом, чему очень рада.</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <!-- Отзыв 3: Рякина Марина -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card">
+                                            <h3 class="client-name">Рякина Марина</h3>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                            <blockquote>
+                                                <p>У меня была консультация по профориентации, после неё появилось воодушевление и уверенность в том, что всё получится :) Мне понравилось: Что есть этап подготовки к консультации, что даёт возможность разогнать собственные мысли и порефлексировать. На консультации понравилась энергия, сразу расслабилась, боялась, что не смогу о себе ничего путного рассказать, но диалог построился очень гармонично.</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <!-- Отзыв 4: Елена Понамарева -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card">
+                                            <h3 class="client-name">Елена Понамарева</h3>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                            <blockquote>
+                                                <p>Анна, благодарю вас за полезный, нужный вебинар. Я теперь знаю, на что обратить внимание при составлении резюме, что учесть, что добавить. Спасибо, что во время вебинара вы ответили на мои вопросы, это очень ценно и важно для меня!</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <!-- Отзыв 5: Ирина Прокопьева -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card">
+                                            <h3 class="client-name">Ирина Прокопьева</h3>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                            <blockquote>
+                                                <p>Спасибо огромное Анне! Помогла утвердиться в правильности выбранного мною пути развития карьеры, дала дельные советы, как преодолеть неуверенность и важные рекомендации по доработке резюме для смены работы. Это было наше повторное сотрудничество. Первое было 4 года назад, тогда я нашла работу за 2 недели. Спасибо ещё раз!</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <!-- Отзыв 6: Анна, аналитик -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card">
+                                            <h3 class="client-name">Анна, аналитик</h3>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                            <blockquote>
+                                                <p>Хотела сказать большое спасибо за подготовку к кейс-интервью, для меня было проблемно найти специалиста, который сможет подготовить к такому формату собеседования. Консультацией очень довольна, стали понятны основные моменты, требования и слабые стороны, которые стоит подтянуть. Обязательно буду обращаться ещё!</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <!-- Отзыв 7: Вилия Семенова -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card">
+                                            <h3 class="client-name">Вилия Семенова</h3>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                            <blockquote>
+                                                <p>Девочки, привет 🌷 Хочу оставить отзыв о недавнем эфире и разборе с карьерным консультантом и рекрутером Анной. Сказать, что я в восторге от консультации — это ничего не сказать! Анна раскрыла мне глаза в прямом смысле слова: я даже и подумать не могла, что во мне столько скрытого потенциала, который можно и нужно направить в правильное русло.</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <!-- Отзыв 8: Без подписи -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card">
+                                            <h3 class="client-name">Клиент</h3>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                            <blockquote>
+                                                <p>Мне понравился подход к работе, впервые проходила тест на самоопределение. После того, как увидела результаты, стало понятнее, почему одни задачи даются мне тяжело (например, работа с документами), а другие (более творческие, типа работы с текстами, презентациями) намного легче и ещё приносят удовольствие.</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <!-- Отзыв 9: Марина -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card">
+                                            <h3 class="client-name">Марина</h3>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                            <blockquote>
+                                                <p>Мне нужно было оформить резюме, так как я активно начинаю поиск работы, консультация прошла очень комфортно, помимо общего разбора, Анна подсказала много лайфхаков по оформлению, дала дополнительные материалы и помогла поверить в себя. После консультации я глобальнее посмотрела на свои навыки, поняла, что всё возможно (так как я хочу уйти в сферу отличную от нынешней), главное — пробовать и не бояться))</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <!-- Отзыв 10: Екатерина Гузеева -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card">
+                                            <h3 class="client-name">Екатерина Гузеева</h3>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                            <blockquote>
+                                                <p>После консультации по самоопределению выявила для себя направления для поиска работы, которые ранее не рассматривала. Интересно, что консультация заставила заземлиться и подумать о ценностях, которые важны для меня. Уверена, что с помощью Анны я смогу найти себе дело по душе.</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Добавляем навигационные стрелки -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <!-- Добавляем пагинацию -->
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <style>/* Стили для секции отзывов */.testimonials-section { padding: 80px 0; background-color: #0078ff; background-image: linear-gradient(135deg, #0078ff, #004a99); position: relative; overflow: hidden; } /* Создаем эффект волн на фоне */.testimonials-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTI4MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTEyODAgMy40QzEwNTAuNTkgMTggMTAxOS40IDg0Ljg5IDczNC40MiA4NC44OWMtMzIwIDAtMzIwLTg0LjMtNjQwLTg0LjNDNTkuNC41OSAyOC4yIDEuNiAwIDMuNFYxNDBoMTI4MHoiIGZpbGwtb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMCAyNC4zMWM0My40Ni01LjY5IDk0LjU2LTkuMjUgMTU4LjQyLTkuMjUgMzIwIDAgMzIwIDg5LjI0IDY0MCA4OS4yNCAyNTYuMTMgMCAzMDcuMjgtNTcuMTYgNDgxLjU4LTgwVjE0MEgweiIgZmlsbC1vcGFjaXR5PSIuNSIvPjxwYXRoIGQ9Ik0xMjgwIDUxLjc2Yy0yMDEgMTIuNDktMjQyLjQzIDUzLjQtNTEzLjU4IDUzLjQtMzIwIDAtMzIwLTU3LTY0MC01Ny00OC44NS4wMS05MC4yMSAxLjM1LTEyNi40MiAzLjZWMTQwaDEyODB6Ii8+PC9nPjwvc3ZnPg=='); background-size: 100% 100%; background-position: center; background-repeat: no-repeat; z-index: 1; opacity: 0.1; } .testimonials-container { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 20px; } .testimonials-header { text-align: center; margin-bottom: 50px; color: #fff; } .testimonials-header h2 { font-size: 36px; font-weight: 700; margin-bottom: 10px; color: #fff; } .testimonials-header .divider { width: 80px; height: 3px; background-color: rgba(255, 255, 255, 0.5); margin: 15px auto; } .testimonials-header p { font-size: 18px; color: rgba(255, 255, 255, 0.8); } /* Стили для слайдера */.testimonial-slider { position: relative; max-width: 800px; margin: 0 auto; } .testimonialSwiper { width: 100%; padding-bottom: 60px; } /* Стили для карточки отзыва */.testimonial-card { background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 30px; margin: 10px; color: #fff; text-align: center; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; min-height: 300px; display: flex; flex-direction: column; } .testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); } .client-name { font-size: 20px; font-weight: 600; margin-bottom: 5px; color: #fff; } .stars { color: #ffc107; margin-bottom: 15px; font-size: 18px; } blockquote { position: relative; font-style: italic; margin: 0; flex-grow: 1; display: flex; align-items: center; justify-content: center; } blockquote p { position: relative; z-index: 1; line-height: 1.8; } blockquote::before, blockquote::after { content: '"'; font-family: Georgia, serif; font-size: 60px; position: absolute; opacity: 0.2; color: #fff; } blockquote::before { top: -20px; left: -10px; } blockquote::after { bottom: -40px; right: -10px; transform: rotate(180deg); } /* Стили для навигационных кнопок */.swiper-button-next, .swiper-button-prev { color: #fff !important; background-color: rgba(255, 255, 255, 0.2); width: 44px !important; height: 44px !important; border-radius: 50%; transition: all 0.3s ease; } .swiper-button-next:hover, .swiper-button-prev:hover { background-color: rgba(255, 255, 255, 0.3); transform: scale(1.1); } .swiper-button-next::after, .swiper-button-prev::after { font-size: 18px !important; font-weight: bold; } /* Стили для пагинации */.swiper-pagination-bullet { width: 12px; height: 12px; background-color: rgba(255, 255, 255, 0.5); opacity: 1; transition: all 0.3s ease; } .swiper-pagination-bullet-active { background-color: #fff; width: 30px; border-radius: 6px; } /* Адаптивные стили */@media (max-width: 768px) { .testimonials-section {  padding: 60px 0; }  .testimonials-header h2 {  font-size: 30px; }  .testimonial-card {  padding: 20px;  min-height: 250px; }  .client-name {  font-size: 18px; }  blockquote p {  font-size: 15px; } } @media (max-width: 480px) { .testimonials-section {  padding: 40px 0; }  .testimonials-header h2 {  font-size: 26px; }  .testimonial-card {  padding: 15px; }  .swiper-button-next, .swiper-button-prev {  display: none !important; }  blockquote::before, blockquote::after {  font-size: 40px; } }</style>
+                <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Инициализация Swiper для отзывов
+    new Swiper(".testimonialSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        effect: "fade", // Эффект затухания для плавных переходов
+        fadeEffect: {
+            crossFade: true // Обеспечивает плавный переход
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        on: {
+            init: function() {
+                console.log("Testimonial slider initialized successfully");
+            }
+        }
+    });
+});
+</script>
+                <!-- Секция контактов с SVG для ВКонтакте -->
+                <section class="contact section" id="contact">
+                    <!-- Section Title -->
+                    <div class="container text-center">
+                        <h2 class="section-title" style="text-align: center; width: 100%;">Контакты</h2>
+                        <div class="section-divider" style="margin-left: auto; margin-right: auto;"></div>
+                        <p class="section-subtitle">Связаться со мной</p>
+                    </div>
+                    <div class="container" data-aos="fade-up" data-aos-delay="100">
+                        <div class="contact-cards-wrapper mt-4 mb-5">
+                            <div class="row g-4 justify-content-center">
+                                <!-- Email -->
+                                <div class="col-lg-3 col-md-6 col-sm-10" data-aos="zoom-in" data-aos-delay="100">
+                                    <a href="mailto:iamrecruterinfo@gmail.com" class="modern-contact-card email-card"> <div class="card-content">
+                                            <div class="icon-container">
+                                                <div class="icon-circle">
+                                                    <i class="bi bi-envelope"></i>
+                                                </div>
+                                                <div class="icon-ring"></div>
+                                            </div>
+                                            <h4>Email</h4>
+                                            <p class="contact-info">iamrecruterinfo@gmail.com</p>
+                                            <span class="hover-text">Написать письмо</span>
+                                        </div> </a>
+                                </div>
+                                <!-- Telegram -->
+                                <div class="col-lg-3 col-md-6 col-sm-10" data-aos="zoom-in" data-aos-delay="200">
+                                    <a href="https://t.me/AnnLarich" target="_blank" class="modern-contact-card telegram-card"> <div class="card-content">
+                                            <div class="icon-container">
+                                                <div class="icon-circle">
+                                                    <i class="bi bi-telegram"></i>
+                                                </div>
+                                                <div class="icon-ring"></div>
+                                            </div>
+                                            <h4>Telegram</h4>
+                                            <p class="contact-info">@AnnLarich</p>
+                                            <span class="hover-text">Открыть чат</span>
+                                        </div> </a>
+                                </div>
+                                <!-- Instagram -->
+                                <div class="col-lg-3 col-md-6 col-sm-10" data-aos="zoom-in" data-aos-delay="300">
+                                    <a href="https://www.instagram.com/annlarich/" target="_blank" class="modern-contact-card instagram-card"> <div class="card-content">
+                                            <div class="icon-container">
+                                                <div class="icon-circle">
+                                                    <i class="bi bi-instagram"></i>
+                                                </div>
+                                                <div class="icon-ring"></div>
+                                            </div>
+                                            <h4>Instagram</h4>
+                                            <p class="contact-info">@annlarich</p>
+                                            <span class="hover-text">Перейти в профиль</span>
+                                        </div> </a>
+                                </div>
+                                <!-- ВКонтакте с SVG иконкой -->
+                                <div class="col-lg-3 col-md-6 col-sm-10" data-aos="zoom-in" data-aos-delay="400">
+                                    <a href="https://vk.com/hr_annlarich" target="_blank" class="modern-contact-card vk-card"> <div class="card-content">
+                                            <div class="icon-container">
+                                                <div class="icon-circle">
+                                                    <!-- Встроенный SVG для ВКонтакте -->
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="vk-icon">
+                                                        <path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.862-.525-2.049-1.714-1.033-1.01-1.49-1.135-1.745-1.135-.356 0-.459.102-.459.593v1.573c0 .42-.134.683-1.22.683-1.793 0-3.95-1.086-5.3-3.12C4.689 10.762 4 8.276 4 7.811c0-.241.104-.469.593-.469h1.745c.444 0 .612.197.786.66.864 2.5 2.3 4.675 2.896 4.675.219 0 .322-.1.322-.66v-2.56c-.067-1.187-.695-1.287-.695-1.71 0-.204.166-.408.43-.408h2.744c.373 0 .51.197.51.643v3.445c0 .37.166.51.268.51.22 0 .402-.141.805-.544 1.254-1.4 2.148-3.555 2.148-3.555.116-.255.33-.485.795-.485h1.744c.522 0 .636.27.522.643-.217 1.017-2.354 4.032-2.354 4.032-.186.305-.259.44 0 .78.186.244 .796.752 1.203 1.21.747.81 1.321 1.491 1.473 1.958.166.454-.087.691-.576.691z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="icon-ring"></div>
+                                            </div>
+                                            <h4>ВКонтакте</h4>
+                                            <p class="contact-info">hr_annlarich</p>
+                                            <span class="hover-text">Открыть страницу</span>
+                                        </div> </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Оригинальная форма обратной связи (без изменений) -->
+                        <form action="https://formsubmit.co/iamrecruterinfo@gmail.com" class="php-email-form" method="POST" role="form" data-aos="fade-up">
+                            <input name="_captcha" type="hidden" value="false"/>
+                            <input name="_subject" type="hidden" value="Новое сообщение с сайта Анны"/>
+                            <input name="_next" type="hidden" value="thank-you.html"/>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <input class="form-control" id="name" name="name" placeholder="Ваше имя" required="" type="text"/>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <input class="form-control" id="email" name="email" placeholder="Ваш Email" required="" type="email"/>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <textarea class="form-control" name="message" placeholder="Сообщение" required="" rows="5"></textarea>
+                            </div>
+                            <div class="text-center mt-4">
+                                <button type="submit" class="send-button"><span>Отправить</span><i class="bi bi-send ms-2"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <style>/* Стили только для карточки ВКонтакте - минимальные изменения */.vk-card .icon-circle { color: #4a76a8; } .vk-card:hover .icon-circle { background: linear-gradient(135deg, #4a76a8, #384e68); color: white; } .vk-icon { transition: all 0.3s ease; } /* Сохраняем существующие стили для остальных карточек */</style>
+            </main>
+            <!-- Улучшенный футер -->
+            <footer class="footer accent-background" id="footer">
+                <div class="container">
+                    <div class="row">
+</div>
+                    <div class="copyright text-center mt-4">
+                        <p class="text-white">©  <strong class="px-1 sitename text-light" style="font-family: 'Rubik', sans-serif;">Анна Ларичева</strong> <span style="font-family: 'Roboto', sans-serif;">2025</span></p>
+                        <p class="text-white">designed by StockLab</p>
+                    </div>
+                </div>
+            </footer>
+            <!-- Кнопка прокрутки вверх -->
+            <a class="scroll-top d-flex align-items-center justify-content-center" href="#" id="scroll-top"> <i class="bi bi-arrow-up-short"></i> </a>
+            <!-- Индикатор прогресса прокрутки -->
+            <div class="scroll-progress"></div>
+            <!-- Прелоадер -->
+            <div id="preloader"></div>
+            <!-- Vendor JS Files -->
+            <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+<script src="assets/vendor/aos/aos.js" defer></script>
+<script src="assets/vendor/typed.js/typed.umd.js" defer></script>
+<script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+<script src="assets/js/custom.js" defer></script>
+
+<script>
+  // Простой код для скрытия прелоадера
+  window.addEventListener('load', function() {
+    document.getElementById('preloader').style.display = 'none';
+  });
+  
+  // Запасной вариант
+  setTimeout(function() {
+    var preloader = document.getElementById('preloader');
+    if (preloader) preloader.style.display = 'none';
+  }, 3000);
+</script>    
+
+</body>
+</html>
