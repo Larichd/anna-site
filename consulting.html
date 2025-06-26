@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+    <head>
+        <style>/* Принудительное исправление позиции фото на главном экране */.hero-background, .hero-background img, .hero-img, .parallax-bg { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: 55% 25% !important; transform: none !important;  /* Убираем трансформации, если они есть */ transition: none !important;  /* Отключаем переходы, которые могут мешать */ } /* Еще более сильное смещение для мобильных */@media (max-width: 767px) { .hero-background, .hero-background img, .hero-img, .parallax-bg {  object-position: 70% 20% !important; } } /* Максимальное смещение для очень маленьких экранов */@media (max-width: 480px) { .hero-background, .hero-background img, .hero-img, .parallax-bg {  object-position: 75% 20% !important; } } /* Стиль для кнопки мобильного меню */.btn-circle.menu-toggle, .mobile-nav-toggle, #mobile-toggle { background-color: #121212 !important; color: white !important; border: 1px solid rgba(255, 255, 255, 0.2) !important; } /* Иконка внутри кнопки */.btn-circle.menu-toggle i, .mobile-nav-toggle i, #mobile-toggle i { color: white !important; }</style>
+        <link as="style" href="assets/css/main.css" rel="preload"/>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <title>Анна Ларичева — Детальное описание услуги</title>
+        <!-- Favicons -->
+        <link href="assets/img/favicon.png" rel="icon"/>
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect"/>
+        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"/>
+        <!-- Vendor CSS Files -->
+        <link href="bootstrap_theme/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet"/>
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+        <!-- Main CSS File -->
+        <link href="assets/css/main.css" rel="stylesheet"/>
+        <link href="assets/css/custom.css" rel="stylesheet"/>
+        <style>
+            html[data-theme="dark"] .form-control::placeholder { 
+                color: #cccccc !important;  /* Светло-серый цвет */ 
+                opacity: 1 !important;  /* Убираем прозрачность */ 
+            } 
+            
+            /* На всякий случай добавим и для префиксов с !important */
+            html[data-theme="dark"] .form-control::-webkit-input-placeholder { 
+                color: #cccccc !important; 
+                opacity: 1 !important; 
+            } 
+            
+            html[data-theme="dark"] .form-control::-moz-placeholder { /* Firefox 19+ */ 
+                color: #cccccc !important; 
+                opacity: 1 !important; 
+            } 
+            
+            html[data-theme="dark"] .form-control:-ms-input-placeholder { /* IE 10+ */ 
+                color: #cccccc !important; 
+                opacity: 1 !important; 
+            } 
+            
+            html[data-theme="dark"] .form-control::-ms-input-placeholder { /* Edge */ 
+                color: #cccccc !important; 
+                opacity: 1 !important; 
+            }
+            
+            /* Стили для страницы-заглушки */
+            .coming-soon-section {
+                min-height: 70vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 50px 20px;
+                background-color: var(--background-color);
+                text-align: center;
+                width: 100%;
+            }
+            
+            .coming-soon-section .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            
+            .coming-soon-icon {
+                font-size: 80px;
+                color: var(--primary-color);
+                margin-bottom: 30px;
+            }
+            
+            .coming-soon-title {
+                font-size: 36px;
+                font-weight: 700;
+                color: var(--heading-color);
+                margin-bottom: 20px;
+            }
+            
+            .coming-soon-text {
+                font-size: 18px;
+                color: var(--text-color);
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 40px;
+                line-height: 1.6;
+                text-align: center;
+            }
+            
+            .btn-back {
+                display: inline-flex;
+                align-items: center;
+                background-color: var(--primary-color);
+                color: white;
+                padding: 12px 30px;
+                border-radius: 50px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                gap: 10px;
+            }
+            
+            .btn-back:hover {
+                background-color: var(--primary-hover);
+                transform: translateY(-3px);
+                box-shadow: 0 4px 12px rgba(0, 120, 255, 0.3);
+            }
+            
+            @media (max-width: 767px) {
+                .coming-soon-icon {
+                    font-size: 60px;
+                }
+                
+                .coming-soon-title {
+                    font-size: 28px;
+                }
+                
+                .coming-soon-text {
+                    font-size: 16px;
+                }
+            }
+        </style>
+        
+        <script>
+            // Проверка предпочтений пользователя
+            if (localStorage.getItem('theme') === 'dark' ||
+                (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'))) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        </script>
+        
+        <!-- Meta tags -->
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&amp;display=swap" rel="stylesheet"/>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+        <meta content="Анна Ларичева — профессиональный рекрутер и карьерный консультант. Подробное описание услуги скоро будет доступно." name="description"/>
+        <meta content="карьерный консультант, рекрутер, подбор персонала, резюме, профориентация, HR, Анна Ларичева" name="keywords"/>
+    </head>
+    <body class="inner-page" style="min-height: 100vh; display: flex; flex-direction: column;">
+        <!-- Прелоадер -->
+        <div id="preloader">
+            <div class="loader-logo">
+                <span>AL</span>
+            </div>
+        </div>
+        
+        <!-- Исправленная шапка сайта -->
+        <header class="header fixed-top" id="header">
+            <div class="container-fluid"> <a href="index.html" class="logo"> <span class="logo-text">Анна Ларичева</span> </a>
+                <nav id="main-nav" class="main-nav navmenu">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Главная</a>
+                        </li>
+                        <li><a href="index.html#about" class="nav-link">Обо мне</a>
+                        </li>
+                        <li><a href="index.html#services" class="nav-link">Услуги</a>
+                        </li>
+                        <li><a href="index.html#portfolio" class="nav-link">Благодарности</a>
+                        </li>
+                        <li><a href="index.html#contact" class="nav-link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <button id="mobile-toggle" class="btn-circle menu-toggle mobile-nav-toggle">
+                        <i class="bi bi-list"></i> 
+                    </button>
+                    <button id="theme-toggle" class="btn-circle">
+                        <i class="bi bi-sun-fill sun-icon"></i>
+                        <i class="bi bi-moon-fill moon-icon"></i>
+                    </button>
+                    <a href="https://t.me/AnnLarich" class="btn-telegram" target="_blank"> <i class="bi bi-telegram"></i> <span class="btn-text">Задать вопрос</span> </a>
+                </div>
+            </div>             
+        </header>
+        
+        <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+        <nav class="mobile-nav-panel" id="mobile-nav-panel">
+            <div class="mobile-nav-header">
+                <span class="mobile-nav-title">Меню</span>
+                <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Закрыть меню">&times;</button>
+            </div>
+            <ul class="mobile-nav-list">
+                <li><a href="index.html" class="mobile-nav-link">Главная</a>
+                </li>
+                <li><a href="index.html#about" class="mobile-nav-link">Обо мне</a>
+                </li>
+                <li><a href="index.html#services" class="mobile-nav-link">Услуги</a>
+                </li>
+                <li><a href="index.html#portfolio" class="mobile-nav-link">Благодарности</a>
+                </li>
+                <li><a href="index.html#contact" class="mobile-nav-link">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <main class="main" style="flex: 1;">
+            <!-- Секция с заглушкой -->
+            <section class="coming-soon-section">
+                <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="coming-soon-icon">
+                        <i class="bi bi-hourglass-split"></i>
+                    </div>
+                    <h1 class="coming-soon-title">Страница в разработке</h1>
+                    <p class="coming-soon-text">В ближайшее время здесь появится подробное описание услуги.<br>Следите за обновлениями!</p>
+                    <a href="index.html" class="btn-back">
+                        <i class="bi bi-arrow-left"></i>
+                        Вернуться на главную
+                    </a>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Улучшенный футер -->
+            <footer class="footer accent-background" id="footer">
+                <div class="container">
+                    <div class="row">
+</div>
+                    <div class="copyright text-center mt-4">
+    <p class="text-white">©  <strong class="px-1 sitename text-light" style="font-family: 'Rubik', sans-serif;">Анна Ларичева</strong> <span style="font-family: 'Roboto', sans-serif;">2025</span></p>
+    <p class="text-white">designed by StockLab</p>
+    <p class="text-white mt-2">
+        <a href="privacy-policy.html" class="text-white-50" style="text-decoration: underline; font-size: 14px;">Политика конфиденциальности</a>
+    </p>
+</div>
+            </div>
+        </footer>
+        
+        <!-- Кнопка прокрутки вверх -->
+        <a class="scroll-top d-flex align-items-center justify-content-center" href="#" id="scroll-top"> <i class="bi bi-arrow-up-short"></i> </a>
+        
+        <!-- Индикатор прогресса прокрутки -->
+        <div class="scroll-progress"></div>
+        
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/typed.js/typed.umd.js"></script>
+        <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        
+        <!-- Инициализация AOS -->
+        <script>AOS.init({ once: true });</script>
+        
+        <!-- Обновленный custom.js -->
+        <script src="assets/js/custom.js"></script>
+    </body>
+</html>
