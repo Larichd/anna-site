@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+    <head>
+        <style>/* Стиль для кнопки мобильного меню */.btn-circle.menu-toggle, .mobile-nav-toggle, #mobile-toggle { background-color: #121212 !important; color: white !important; border: 1px solid rgba(255, 255, 255, 0.2) !important; } .btn-circle.menu-toggle i, .mobile-nav-toggle i, #mobile-toggle i { color: white !important; }</style>
+        <link as="style" href="assets/css/main.css" rel="preload"/>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <title>Карьерная консультация — Анна Ларичева</title>
+        <!-- Favicons -->
+        <link href="assets/img/favicon.png" rel="icon"/>
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect"/>
+        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"/>
+        <!-- Vendor CSS Files -->
+        <link href="bootstrap_theme/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet"/>
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+        <!-- Main CSS File -->
+        <link href="assets/css/main.css" rel="stylesheet"/>
+        <link href="assets/css/custom.css" rel="stylesheet"/>
+        
+        <!-- Meta tags -->
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&amp;display=swap" rel="stylesheet"/>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+        <meta content="Карьерная консультация от Анны Ларичевой — разбор карьерной ситуации, стратегия поиска работы, подготовка к собеседованиям. Более 7 лет опыта в карьерном консультировании." name="description"/>
+        <meta content="карьерная консультация, карьерный консультант, поиск работы, собеседование, карьерный коуч, HR, Анна Ларичева" name="keywords"/>
+        
+        <script>
+            if (localStorage.getItem('theme') === 'dark' ||
+                (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'))) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        </script>
+
+<style>
+/* ===== PAGE HERO ===== */
+.page-hero {
+    position: relative;
+    padding: 160px 0 80px;
+    background: linear-gradient(135deg, #0062cc 0%, #0078ff 40%, #00a5ff 100%);
+    overflow: hidden;
+    text-align: center;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    pointer-events: none;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    pointer-events: none;
+}
+
+.page-hero .breadcrumb-nav {
+    margin-bottom: 20px;
+}
+
+.page-hero .breadcrumb-nav a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.page-hero .breadcrumb-nav a:hover {
+    color: #fff;
+}
+
+.page-hero .breadcrumb-nav span {
+    color: rgba(255,255,255,0.5);
+    margin: 0 8px;
+    font-size: 14px;
+}
+
+.page-hero .breadcrumb-nav .current {
+    color: rgba(255,255,255,0.9);
+    font-size: 15px;
+}
+
+.page-hero h1 {
+    color: #fff;
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.page-hero .hero-subtitle {
+    color: rgba(255,255,255,0.85);
+    font-size: 18px;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.page-hero .hero-price-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 24px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 24px;
+}
+
+/* ===== CONTENT SECTIONS ===== */
+.service-page-section {
+    padding: 80px 0;
+}
+
+.service-page-section:nth-child(even) {
+    background: rgba(0, 120, 255, 0.02);
+}
+
+html[data-theme="dark"] .service-page-section:nth-child(even) {
+    background: rgba(255,255,255,0.02);
+}
+
+.sp-section-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.sp-section-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0078ff, #00a5ff);
+    border-radius: 2px;
+    margin: 0 auto 40px;
+}
+
+/* ===== INTRO SECTION ===== */
+.intro-section .intro-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 16px;
+}
+
+.intro-section .intro-image-wrap {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+}
+
+.intro-section .intro-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.intro-section .intro-image-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to top, rgba(0,120,255,0.12), transparent);
+    pointer-events: none;
+}
+
+/* ===== CHECKLIST ===== */
+.checklist-card {
+    background: var(--surface-color, #fff);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,120,255,0.06);
+}
+
+html[data-theme="dark"] .checklist-card {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.08);
+}
+
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+html[data-theme="dark"] .checklist-item {
+    border-bottom-color: rgba(255,255,255,0.06);
+}
+
+.checklist-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.checklist-item:first-child {
+    padding-top: 0;
+}
+
+.checklist-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0078ff, #00a5ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.checklist-icon i {
+    color: #fff;
+    font-size: 13px;
+}
+
+.checklist-item p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* ===== SERVICE INCLUDES CARDS ===== */
+.includes-card {
+    background: var(--surface-color, #fff);
+    border-radius: 16px;
+    padding: 28px 24px;
+    height: 100%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,120,255,0.06);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+html[data-theme="dark"] .includes-card {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.08);
+}
+
+.includes-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0,120,255,0.12);
+    border-color: rgba(0,120,255,0.15);
+}
+
+.includes-card .card-num {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 48px;
+    font-weight: 800;
+    color: rgba(0,120,255,0.06);
+    line-height: 1;
+    font-family: 'Poppins', sans-serif;
+}
+
+html[data-theme="dark"] .includes-card .card-num {
+    color: rgba(255,255,255,0.04);
+}
+
+.includes-card .card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(0,120,255,0.1), rgba(0,165,255,0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.includes-card .card-icon i {
+    font-size: 22px;
+    color: #0078ff;
+}
+
+.includes-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+.includes-card p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-color);
+    margin: 0;
+    opacity: 0.85;
+}
+
+/* ===== PROCESS TIMELINE ===== */
+.process-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #0078ff, #00a5ff, rgba(0,120,255,0.1));
+}
+
+.timeline-step {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 36px;
+    position: relative;
+}
+
+.timeline-step:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-num {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0078ff, #00a5ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 16px rgba(0,120,255,0.25);
+    z-index: 1;
+}
+
+.timeline-content {
+    flex: 1;
+    background: var(--surface-color, #fff);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,120,255,0.06);
+    transition: all 0.3s ease;
+}
+
+html[data-theme="dark"] .timeline-content {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.08);
+}
+
+.timeline-content:hover {
+    box-shadow: 0 8px 30px rgba(0,120,255,0.1);
+    transform: translateX(4px);
+}
+
+.timeline-content h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-color);
+    margin: 0;
+    opacity: 0.85;
+}
+
+/* ===== RESULTS ===== */
+.result-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px;
+    background: var(--surface-color, #fff);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,120,255,0.05);
+    transition: all 0.3s ease;
+}
+
+html[data-theme="dark"] .result-item {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.06);
+}
+
+.result-item:hover {
+    transform: translateX(6px);
+    box-shadow: 0 4px 20px rgba(0,120,255,0.08);
+}
+
+.result-item .result-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(0,120,255,0.1), rgba(0,165,255,0.15));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-item .result-icon i {
+    font-size: 18px;
+    color: #0078ff;
+}
+
+.result-item p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+/* ===== AUDIENCE SECTION ===== */
+.audience-card {
+    background: var(--surface-color, #fff);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,120,255,0.06);
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+html[data-theme="dark"] .audience-card {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.08);
+}
+
+.audience-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,120,255,0.1);
+}
+
+.audience-card .aud-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0,120,255,0.1), rgba(0,165,255,0.12));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+}
+
+.audience-card .aud-icon i {
+    font-size: 22px;
+    color: #0078ff;
+}
+
+.audience-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* ===== TRUST SECTION ===== */
+.trust-section .trust-image-wrap {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+}
+
+.trust-section .trust-image-wrap img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.trust-quote {
+    background: linear-gradient(135deg, rgba(0,120,255,0.06), rgba(0,165,255,0.03));
+    border-left: 4px solid #0078ff;
+    border-radius: 0 12px 12px 0;
+    padding: 24px 28px;
+    margin-top: 24px;
+}
+
+html[data-theme="dark"] .trust-quote {
+    background: rgba(255,255,255,0.04);
+}
+
+.trust-quote p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin: 0;
+    font-style: italic;
+}
+
+/* ===== PRICING CARD ===== */
+.pricing-card {
+    background: var(--surface-color, #fff);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,120,255,0.08);
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+html[data-theme="dark"] .pricing-card {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.1);
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0078ff, #00a5ff);
+}
+
+.pricing-card .price-amount {
+    font-size: 42px;
+    font-weight: 700;
+    color: #0078ff;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 8px;
+}
+
+.pricing-card .price-note {
+    font-size: 15px;
+    color: var(--text-color);
+    opacity: 0.7;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.pricing-card .btn-pricing {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #0078ff, #00a5ff);
+    color: #fff;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0,120,255,0.3);
+}
+
+.pricing-card .btn-pricing:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0,120,255,0.35);
+    color: #fff;
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+    background: linear-gradient(135deg, #0062cc, #0078ff, #00a5ff);
+    padding: 70px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -15%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+}
+
+.cta-section h2 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.cta-section > .container > p {
+    color: rgba(255,255,255,0.85);
+    font-size: 17px;
+    max-width: 580px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+}
+
+.cta-section .btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: #0078ff;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.cta-section .btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.cta-section .btn-cta-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: #fff;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.4);
+    margin-left: 16px;
+}
+
+.cta-section .btn-cta-outline:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.7);
+    transform: translateY(-3px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991px) {
+    .page-hero {
+        padding: 140px 0 60px;
+    }
+    .page-hero h1 {
+        font-size: 34px;
+    }
+    .sp-section-title {
+        font-size: 26px;
+    }
+    .service-page-section {
+        padding: 60px 0;
+    }
+    .process-timeline::before {
+        left: 24px;
+    }
+    .timeline-num {
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-hero {
+        padding: 120px 0 50px;
+    }
+    .page-hero h1 {
+        font-size: 28px;
+    }
+    .page-hero .hero-subtitle {
+        font-size: 16px;
+    }
+    .sp-section-title {
+        font-size: 24px;
+    }
+    .service-page-section {
+        padding: 50px 0;
+    }
+    .includes-card {
+        padding: 24px 20px;
+    }
+    .pricing-card {
+        padding: 30px 24px;
+    }
+    .pricing-card .price-amount {
+        font-size: 34px;
+    }
+    .cta-section h2 {
+        font-size: 26px;
+    }
+    .cta-section .btn-cta-outline {
+        margin-left: 0;
+        margin-top: 12px;
+    }
+    .process-timeline::before {
+        left: 20px;
+    }
+    .timeline-num {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    .timeline-step {
+        gap: 16px;
+    }
+    .timeline-content {
+        padding: 20px;
+    }
+}
+
+/* ===== DARK THEME PLACEHOLDER FIX ===== */
+html[data-theme="dark"] .form-control::placeholder { color: #cccccc !important; opacity: 1 !important; }
+html[data-theme="dark"] .form-control::-webkit-input-placeholder { color: #cccccc !important; opacity: 1 !important; }
+html[data-theme="dark"] .form-control::-moz-placeholder { color: #cccccc !important; opacity: 1 !important; }
+html[data-theme="dark"] .form-control:-ms-input-placeholder { color: #cccccc !important; opacity: 1 !important; }
+</style>
+
+    </head>
+    <body class="inner-page" style="min-height: 100vh; display: flex; flex-direction: column;">
+        <!-- Прелоадер -->
+        <div id="preloader">
+            <div class="loader-logo">
+                <span>AL</span>
+            </div>
+        </div>
+        
+        <!-- Шапка сайта -->
+        <header class="header fixed-top" id="header">
+            <div class="container-fluid"> <a href="index.html" class="logo"> <span class="logo-text">Анна Ларичева</span> </a>
+                <nav id="main-nav" class="main-nav navmenu">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Главная</a></li>
+                        <li><a href="index.html#about" class="nav-link">Обо мне</a></li>
+                        <li><a href="index.html#services" class="nav-link active">Услуги</a></li>
+                        <li><a href="index.html#portfolio" class="nav-link">Благодарности</a></li>
+                        <li><a href="index.html#contact" class="nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <button id="mobile-toggle" class="btn-circle menu-toggle mobile-nav-toggle">
+                        <i class="bi bi-list"></i> 
+                    </button>
+                    <button id="theme-toggle" class="btn-circle">
+                        <i class="bi bi-sun-fill sun-icon"></i>
+                        <i class="bi bi-moon-fill moon-icon"></i>
+                    </button>
+                    <a href="https://max.ru/u/f9LHodD0cOJftv-XCZM0JKYA8aFD7uHXopSuJAr0GsAAgrupO002bXQSnOY" class="btn-telegram" target="_blank"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" style="vertical-align: -2px;"><path d="M256 56C141.1 56 48 134.3 48 230c0 53.7 28.8 102 74 136.5l-18 72.5 70-39c25 8 52.5 13 82 13 114.9 0 208-78.3 208-174S370.9 56 256 56z"/></svg> <span class="btn-text">Задать вопрос</span> </a>
+                </div>
+            </div>             
+        </header>
+        
+        <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+        <nav class="mobile-nav-panel" id="mobile-nav-panel">
+            <div class="mobile-nav-header">
+                <span class="mobile-nav-title">Меню</span>
+                <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Закрыть меню">&times;</button>
+            </div>
+            <ul class="mobile-nav-list">
+                <li><a href="index.html" class="mobile-nav-link">Главная</a></li>
+                <li><a href="index.html#about" class="mobile-nav-link">Обо мне</a></li>
+                <li><a href="index.html#services" class="mobile-nav-link">Услуги</a></li>
+                <li><a href="index.html#portfolio" class="mobile-nav-link">Благодарности</a></li>
+                <li><a href="index.html#contact" class="mobile-nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main" style="flex: 1;">
+
+            <!-- ===== PAGE HERO ===== -->
+            <section class="page-hero">
+                <div class="container" data-aos="fade-up">
+                    <div class="breadcrumb-nav">
+                        <a href="index.html">Главная</a>
+                        <span>/</span>
+                        <a href="index.html#services">Услуги</a>
+                        <span>/</span>
+                        <span class="current">Карьерная консультация</span>
+                    </div>
+                    <h1>Карьерная консультация</h1>
+                    <p class="hero-subtitle">Разбор карьерной ситуации, стратегия поиска работы, подготовка к собеседованиям и осознанное развитие карьеры</p>
+                    <div class="hero-price-badge">
+                        <i class="bi bi-tag"></i>
+                        от 6 000 ₽
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== INTRO ===== -->
+            <section class="service-page-section intro-section">
+                <div class="container">
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-5" data-aos="fade-right" data-aos-duration="800">
+                            <div class="intro-image-wrap">
+                                <img src="image/1MVV02966.webp" alt="Анна Ларичева — карьерный консультант" loading="lazy" width="600" height="800">
+                            </div>
+                        </div>
+                        <div class="col-lg-7" data-aos="fade-left" data-aos-duration="800">
+                            <div class="intro-text">
+                                <p>Карьерная консультация — это возможность остановиться, посмотреть на свою профессиональную ситуацию со стороны и выстроить понятный, реалистичный маршрут дальше.</p>
+                                <p>Я помогаю разобраться в карьерных вопросах, когда есть ощущение неопределённости, усталости, желания расти, менять направление или выходить на новый уровень.</p>
+                                <p>На консультации мы не просто обсуждаем переживания, а ищем конкретные решения, опираясь на ваш опыт, сильные стороны, цели и текущую ситуацию на рынке труда.</p>
+                                <p><strong>Для меня важно, чтобы после встречи у вас оставалось не только больше ясности, но и понимание, что делать дальше — шаг за шагом.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== С КАКИМИ ЗАПРОСАМИ ===== -->
+            <section class="service-page-section">
+                <div class="container">
+                    <h2 class="sp-section-title" data-aos="fade-up">С какими запросами я работаю</h2>
+                    <div class="sp-section-divider" data-aos="fade-up"></div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                            <div class="checklist-card">
+                                <div class="checklist-item">
+                                    <div class="checklist-icon"><i class="bi bi-check2"></i></div>
+                                    <p>Не понимаете, куда двигаться дальше в профессии</p>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checklist-icon"><i class="bi bi-check2"></i></div>
+                                    <p>Хотите сменить работу, но не знаете, с чего начать</p>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checklist-icon"><i class="bi bi-check2"></i></div>
+                                    <p>Чувствуете выгорание, потерю мотивации или неудовлетворённость текущей работой</p>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checklist-icon"><i class="bi bi-check2"></i></div>
+                                    <p>Хотите выстроить карьерную стратегию и расти осознанно</p>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checklist-icon"><i class="bi bi-check2"></i></div>
+                                    <p>Давно не были на рынке труда и хотите понять, как сейчас искать работу</p>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checklist-icon"><i class="bi bi-check2"></i></div>
+                                    <p>Сомневаетесь в себе перед поиском новой позиции</p>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checklist-icon"><i class="bi bi-check2"></i></div>
+                                    <p>Хотите подготовиться к собеседованиям и чувствовать себя увереннее</p>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checklist-icon"><i class="bi bi-check2"></i></div>
+                                    <p>Выбираете между несколькими вариантами развития</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== ЧТО ВХОДИТ ===== -->
+            <section class="service-page-section">
+                <div class="container">
+                    <h2 class="sp-section-title" data-aos="fade-up">Что входит в консультацию</h2>
+                    <div class="sp-section-divider" data-aos="fade-up"></div>
+                    <div class="row g-4">
+                        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="50">
+                            <div class="includes-card">
+                                <span class="card-num">01</span>
+                                <div class="card-icon"><i class="bi bi-signpost-split"></i></div>
+                                <h4>Анализ карьерного пути</h4>
+                                <p>Подробно разбираем ваш профессиональный опыт, сильные стороны, достижения, переходы и текущую ситуацию. Это помогает увидеть реальную логику вашей карьеры: где вы сильны, что тормозит, чего хотите на самом деле и какие ресурсы уже есть.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="includes-card">
+                                <span class="card-num">02</span>
+                                <div class="card-icon"><i class="bi bi-compass"></i></div>
+                                <h4>Стратегия поиска работы</h4>
+                                <p>Если ваш запрос связан с новым трудоустройством, определяем оптимальную стратегию: на какие вакансии ориентироваться, как позиционировать себя, где искать предложения, как выстроить процесс поиска без хаоса и выгорания.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="150">
+                            <div class="includes-card">
+                                <span class="card-num">03</span>
+                                <div class="card-icon"><i class="bi bi-mic"></i></div>
+                                <h4>Подготовка к собеседованиям</h4>
+                                <p>Помогаю понять, как уверенно рассказывать о себе, опыте, достижениях и целях. Разбираем сложные вопросы, формулировки, слабые места, страхи перед интервью и выстраиваем более сильную самопрезентацию.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="includes-card">
+                                <span class="card-num">04</span>
+                                <div class="card-icon"><i class="bi bi-lightning-charge"></i></div>
+                                <h4>Работа с мотивацией</h4>
+                                <p>Иногда проблема не в рынке и не в опыте, а во внутреннем состоянии: тревоге, усталости, разочаровании. В таких случаях мы отдельно работаем с мотивацией, внутренними опорами и возвращением ощущения ясности и направления.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== КАК ПРОХОДИТ ===== -->
+            <section class="service-page-section">
+                <div class="container">
+                    <h2 class="sp-section-title" data-aos="fade-up">Как проходит консультация</h2>
+                    <div class="sp-section-divider" data-aos="fade-up"></div>
+                    <div class="process-timeline">
+                        <div class="timeline-step" data-aos="fade-up" data-aos-delay="50">
+                            <div class="timeline-num">1</div>
+                            <div class="timeline-content">
+                                <h4>Знакомство с вашим запросом</h4>
+                                <p>До консультации или в самом начале встречи определяем, с каким вопросом вы приходите и какой результат для вас будет полезным.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step" data-aos="fade-up" data-aos-delay="100">
+                            <div class="timeline-num">2</div>
+                            <div class="timeline-content">
+                                <h4>Разбор текущей ситуации</h4>
+                                <p>Подробно обсуждаем ваш опыт, цели, сложности, ограничения, сомнения и возможности.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step" data-aos="fade-up" data-aos-delay="150">
+                            <div class="timeline-num">3</div>
+                            <div class="timeline-content">
+                                <h4>Поиск решений и стратегии</h4>
+                                <p>Помогаю структурировать ситуацию, увидеть возможные варианты и выбрать наиболее реалистичный и подходящий путь.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step" data-aos="fade-up" data-aos-delay="200">
+                            <div class="timeline-num">4</div>
+                            <div class="timeline-content">
+                                <h4>Практические рекомендации</h4>
+                                <p>По итогам консультации получаете конкретные ориентиры: на что обратить внимание, какие шаги сделать дальше, как выстроить движение к нужному результату.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== С ЧЕМ УХОДИТЕ ===== -->
+            <section class="service-page-section">
+                <div class="container">
+                    <h2 class="sp-section-title" data-aos="fade-up">С чем вы уходите после консультации</h2>
+                    <div class="sp-section-divider" data-aos="fade-up"></div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="result-item" data-aos="fade-up" data-aos-delay="50">
+                                <div class="result-icon"><i class="bi bi-eye"></i></div>
+                                <p>Более ясное понимание своей карьерной ситуации</p>
+                            </div>
+                            <div class="result-item" data-aos="fade-up" data-aos-delay="100">
+                                <div class="result-icon"><i class="bi bi-chat-square-text"></i></div>
+                                <p>Взгляд со стороны и профессиональная обратная связь</p>
+                            </div>
+                            <div class="result-item" data-aos="fade-up" data-aos-delay="150">
+                                <div class="result-icon"><i class="bi bi-star"></i></div>
+                                <p>Понимание своих сильных сторон и точек роста</p>
+                            </div>
+                            <div class="result-item" data-aos="fade-up" data-aos-delay="200">
+                                <div class="result-icon"><i class="bi bi-map"></i></div>
+                                <p>План дальнейших шагов</p>
+                            </div>
+                            <div class="result-item" data-aos="fade-up" data-aos-delay="250">
+                                <div class="result-icon"><i class="bi bi-emoji-smile"></i></div>
+                                <p>Более спокойное и уверенное состояние по отношению к поиску работы или карьерным изменениям</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== КОМУ ПОЛЕЗНА ===== -->
+            <section class="service-page-section">
+                <div class="container">
+                    <h2 class="sp-section-title" data-aos="fade-up">Кому особенно полезна эта услуга</h2>
+                    <div class="sp-section-divider" data-aos="fade-up"></div>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="50">
+                            <div class="audience-card">
+                                <div class="aud-icon"><i class="bi bi-graph-up"></i></div>
+                                <p>Специалистам, которые хотят расти и развиваться осознанно</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="audience-card">
+                                <div class="aud-icon"><i class="bi bi-search"></i></div>
+                                <p>Тем, кто находится в поиске новой работы</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+                            <div class="audience-card">
+                                <div class="aud-icon"><i class="bi bi-arrow-repeat"></i></div>
+                                <p>Тем, кто хочет сменить сферу или роль</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="audience-card">
+                                <div class="aud-icon"><i class="bi bi-question-circle"></i></div>
+                                <p>Тем, кто застрял в сомнениях и не может принять решение</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+                            <div class="audience-card">
+                                <div class="aud-icon"><i class="bi bi-rocket-takeoff"></i></div>
+                                <p>Тем, кто хочет выйти на рынок труда сильнее и увереннее</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== ПОЧЕМУ РАБОТАЕТ ===== -->
+            <section class="service-page-section trust-section">
+                <div class="container">
+                    <h2 class="sp-section-title" data-aos="fade-up">Почему этот формат работает</h2>
+                    <div class="sp-section-divider" data-aos="fade-up"></div>
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-7 order-2 order-lg-1" data-aos="fade-right" data-aos-duration="800">
+                            <div class="intro-text">
+                                <p style="font-size: 17px; line-height: 1.8; color: var(--text-color);">Я совмещаю опыт карьерного консультанта и практикующего рекрутера, а это значит, что могу смотреть на ваш запрос сразу с двух сторон.</p>
+                                <p style="font-size: 17px; line-height: 1.8; color: var(--text-color);">Как со стороны человека, который ищет своё направление и хочет профессионально расти, так и со стороны рынка, работодателей и реальных требований к кандидатам.</p>
+                            </div>
+                            <div class="trust-quote">
+                                <p>Это позволяет делать консультацию не абстрактной, а максимально прикладной, честной и полезной для реальных карьерных решений.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 order-1 order-lg-2" data-aos="fade-left" data-aos-duration="800">
+                            <div class="trust-image-wrap">
+                                <img src="image/22.webp" alt="Карьерная консультация с Анной Ларичевой" loading="lazy" width="800" height="534">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== СТОИМОСТЬ ===== -->
+            <section class="service-page-section">
+                <div class="container">
+                    <h2 class="sp-section-title" data-aos="fade-up">Стоимость</h2>
+                    <div class="sp-section-divider" data-aos="fade-up"></div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <div class="pricing-card">
+                            <div class="price-amount">от 6 000 ₽</div>
+                            <p class="price-note">Индивидуальная карьерная консультация</p>
+                            <a href="https://t.me/AnnLarich" target="_blank" class="btn-pricing">
+                                <i class="bi bi-telegram"></i> Записаться на консультацию
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+<!-- ===== CTA ===== -->
+            <section class="cta-section">
+                <div class="container" data-aos="fade-up">
+                    <h2>Хотите найти своё профессиональное направление?</h2>
+                    <p>Запишитесь на консультацию, и мы вместе определим ваши сильные стороны и найдём подходящий карьерный путь</p>
+                    <div>
+                        <a href="https://max.ru/u/f9LHodD0cOJftv-XCZM0JKYA8aFD7uHXopSuJAr0GsAAgrupO002bXQSnOY" target="_blank" class="btn-cta">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 512 512" fill="currentColor" style="vertical-align: -2px;"><path d="M256 56C141.1 56 48 134.3 48 230c0 53.7 28.8 102 74 136.5l-18 72.5 70-39c25 8 52.5 13 82 13 114.9 0 208-78.3 208-174S370.9 56 256 56z"/></svg> Написать в Max
+                        </a>
+                        <a href="index.html#contact" class="btn-cta-outline">
+                            <i class="bi bi-envelope"></i> Оставить заявку на сайте
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+        <!-- Футер -->
+        <footer class="footer accent-background" id="footer">
+            <div class="container">
+                <div class="row"></div>
+                <div class="copyright text-center mt-4">
+                    <p class="text-white">© <strong class="px-1 sitename text-light" style="font-family: 'Rubik', sans-serif;">Анна Ларичева</strong> <span style="font-family: 'Roboto', sans-serif;">2026</span></p>
+                    <p class="text-white">designed by StockLab</p>
+                    <p class="text-white mt-2">
+                        <a href="privacy-policy.html" class="text-white-50" style="text-decoration: underline; font-size: 14px;">Политика конфиденциальности</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Кнопка прокрутки вверх -->
+        <a class="scroll-top d-flex align-items-center justify-content-center" href="#" id="scroll-top"> <i class="bi bi-arrow-up-short"></i> </a>
+        
+        <!-- Индикатор прогресса прокрутки -->
+        <div class="scroll-progress"></div>
+        
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/typed.js/typed.umd.js"></script>
+        <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>AOS.init({ once: true });</script>
+        
+        <!-- Обновленный custom.js -->
+        <script src="assets/js/custom.js"></script>
+
+<!-- Исправление цвета меню при прокрутке (светлая тема, десктоп) -->
+<style>
+/* Светлая тема, десктоп, ДО прокрутки — белый текст поверх hero */
+@media (min-width: 1200px) {
+  html:not([data-theme="dark"]) #header.header-light-top .nav-link {
+    color: #ffffff !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  html:not([data-theme="dark"]) #header.header-light-top .nav-link:hover,
+  html:not([data-theme="dark"]) #header.header-light-top .nav-link.active {
+    color: #cce4ff !important;
+  }
+  html:not([data-theme="dark"]) #header.header-light-top .nav-link::after {
+    background-color: #ffffff !important;
+  }
+  html:not([data-theme="dark"]) #header.header-light-top .logo-text {
+    color: #ffffff !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    transition: color 0.3s ease;
+  }
+  html:not([data-theme="dark"]) #header.header-light-top .btn-circle {
+    color: #ffffff !important;
+    transition: color 0.3s ease;
+  }
+
+  /* Светлая тема, десктоп, ПОСЛЕ прокрутки — тёмный текст на белом фоне */
+  html:not([data-theme="dark"]) #header.header-light-scrolled .nav-link {
+    color: #333333 !important;
+    text-shadow: none !important;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  html:not([data-theme="dark"]) #header.header-light-scrolled .nav-link:hover,
+  html:not([data-theme="dark"]) #header.header-light-scrolled .nav-link.active {
+    color: #0078ff !important;
+  }
+  html:not([data-theme="dark"]) #header.header-light-scrolled .nav-link::after {
+    background-color: #0078ff !important;
+  }
+  html:not([data-theme="dark"]) #header.header-light-scrolled .logo-text {
+    color: #212529 !important;
+    text-shadow: none !important;
+    transition: color 0.3s ease;
+  }
+  html:not([data-theme="dark"]) #header.header-light-scrolled .btn-circle {
+    color: #333333 !important;
+    transition: color 0.3s ease;
+  }
+}
+</style>
+<script>
+(function () {
+  var SCROLL_THRESHOLD = 50;
+
+  function applyHeaderColors() {
+    var header = document.getElementById('header');
+    if (!header) return;
+
+    var isDark    = document.documentElement.getAttribute('data-theme') === 'dark';
+    var isDesktop = window.innerWidth >= 1200;
+    var scrolled  = window.scrollY > SCROLL_THRESHOLD;
+
+    header.classList.remove('header-light-top', 'header-light-scrolled');
+
+    if (isDesktop && !isDark) {
+      header.classList.add(scrolled ? 'header-light-scrolled' : 'header-light-top');
+    }
+  }
+
+  window.addEventListener('scroll', applyHeaderColors, { passive: true });
+  window.addEventListener('resize', applyHeaderColors);
+  new MutationObserver(applyHeaderColors)
+    .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyHeaderColors);
+  } else {
+    applyHeaderColors();
+  }
+})();
+</script>
+    </body>
+</html>
